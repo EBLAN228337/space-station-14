@@ -1,11 +1,10 @@
-﻿using Content.Server.Chat.Managers;
-using Content.Server.GameTicking.Rules;
+﻿using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
 
 namespace Content.Server.Backmen.Economy.Wage;
 
 [RegisterComponent, Access(typeof(WageSchedulerSystem))]
-public sealed class WageSchedulerRuleComponent : Component
+public sealed partial class WageSchedulerRuleComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)] public float TimeUntilNextWage;
 
@@ -49,7 +48,7 @@ public sealed class WageSchedulerSystem : GameRuleSystem<WageSchedulerRuleCompon
             component.TimeUntilNextWage -= frameTime;
             return;
         }
-        _wageManagerSystem.Payday();
+        QueueLocalEvent(new WagePaydayEvent());
         component.TimeUntilNextWage = component.WageInterval;
 
     }

@@ -1,6 +1,5 @@
 ﻿// ReSharper disable once CheckNamespace
 
-using System.Linq;
 using Content.Server.Access.Systems;
 using Content.Server.Backmen.Economy;
 using Content.Server.Store.Components;
@@ -8,9 +7,6 @@ using Content.Server.VendingMachines;
 using Content.Shared.Backmen.Store;
 using Content.Shared.Store;
 using Content.Shared.VendingMachines;
-using Robust.Server.Player;
-using Robust.Shared.Audio;
-using Robust.Shared.Players;
 
 namespace Content.Server.Store.Systems;
 
@@ -67,9 +63,7 @@ public sealed partial class StoreSystem
                 return false;
             }
 
-            if (!_bankManagerSystem.TryWithdrawFromBankAccount(
-                    idCardComponent.StoredBankAccountNumber,
-                    idCardComponent.StoredBankAccountPin, currency))
+            if (!_bankManagerSystem.TryWithdrawFromBankAccount(idCardComponent.Owner, currency, null))
             {
                 _PlayDeny(uid);
                 _popup.PopupEntity(Loc.GetString("store-no-money"),uid);

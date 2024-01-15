@@ -71,571 +71,571 @@ entities:
             color: '#FFFFFFFF'
             id: Arrows
           decals:
-            267: -2,-18
-            377: 6,-2
+            82: -2,-18
+            165: 6,-2
         - node:
             color: '#FFFFFFFF'
             id: Arrows
           decals:
-            200: -5,-19
+            33: -5,-19
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
             id: Arrows
           decals:
-            216: 4,-23
-            266: 0,-18
-            378: -8,-2
+            45: 4,-23
+            81: 0,-18
+            166: -8,-2
         - node:
             color: '#FFFFFFFF'
             id: Bot
           decals:
-            194: -7,-20
-            264: 0,-17
-            265: -2,-17
-            371: -7,-3
-            372: -7,-2
-            373: -7,-1
-            374: 5,-3
-            375: 5,-2
-            376: 5,-1
+            27: -7,-20
+            79: 0,-17
+            80: -2,-17
+            159: -7,-3
+            160: -7,-2
+            161: -7,-1
+            162: 5,-3
+            163: 5,-2
+            164: 5,-1
         - node:
             color: '#FFFFFFFF'
             id: BotLeft
           decals:
-            212: 4,-22
-            213: 6,-22
+            41: 4,-22
+            42: 6,-22
         - node:
             color: '#FFFFFFFF'
             id: BotRight
           decals:
-            214: 5,-24
-            215: 7,-24
+            43: 5,-24
+            44: 7,-24
         - node:
             color: '#FFFFFFFF'
             id: Box
           decals:
-            199: -5,-20
-            401: -5,2
+            32: -5,-20
+            180: -5,2
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkCornerSw
           decals:
-            234: 2,-19
+            56: 2,-19
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineS
           decals:
-            236: 3,-21
-            237: 4,-21
-            238: 5,-21
-            239: 6,-21
+            58: 3,-21
+            59: 4,-21
+            60: 5,-21
+            61: 6,-21
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineW
           decals:
-            235: 2,-18
+            57: 2,-18
         - node:
             color: '#DE3A3AE3'
             id: BrickTileSteelCornerNe
           decals:
-            272: 3,-14
+            84: 3,-14
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelCornerNe
           decals:
-            313: 3,-8
+            106: 3,-8
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelCornerNw
           decals:
-            314: 2,-8
-            315: 1,-9
+            107: 2,-8
+            108: 1,-9
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelCornerSe
           decals:
-            317: 3,-11
+            110: 3,-11
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelCornerSw
           decals:
-            316: 1,-11
+            109: 1,-11
         - node:
             color: '#DE3A3AE3'
             id: BrickTileSteelEndS
           decals:
-            276: 3,-15
+            87: 3,-15
         - node:
             color: '#DE3A3AE3'
             id: BrickTileSteelEndW
           decals:
-            277: 1,-14
+            88: 1,-14
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelInnerNw
           decals:
-            320: 2,-9
+            113: 2,-9
         - node:
             color: '#DE3A3AE3'
             id: BrickTileSteelInnerSw
           decals:
-            275: 3,-14
+            86: 3,-14
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelLineE
           decals:
-            311: 3,-10
-            312: 3,-9
+            104: 3,-10
+            105: 3,-9
         - node:
             color: '#DE3A3AE3'
             id: BrickTileSteelLineN
           decals:
-            271: 2,-14
+            83: 2,-14
         - node:
             color: '#DE3A3AE3'
             id: BrickTileSteelLineS
           decals:
-            274: 2,-14
+            85: 2,-14
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelLineS
           decals:
-            318: 2,-11
+            111: 2,-11
         - node:
             color: '#FFFFFFFF'
             id: BrickTileSteelLineW
           decals:
-            319: 1,-10
+            112: 1,-10
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteCornerNe
           decals:
-            422: -3,7
-            435: 0,7
-            441: 2,7
-            442: 3,6
+            194: -3,7
+            205: 0,7
+            210: 2,7
+            211: 3,6
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteCornerNe
           decals:
-            241: 4,-1
+            63: 4,-1
         - node:
             color: '#FFC56993'
             id: BrickTileWhiteCornerNe
           decals:
-            383: -4,-5
+            167: -4,-5
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteCornerNw
           decals:
-            423: -4,7
-            424: -5,6
-            434: -2,7
-            440: 1,7
+            195: -4,7
+            196: -5,6
+            204: -2,7
+            209: 1,7
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteCornerNw
           decals:
-            240: 2,-1
+            62: 2,-1
         - node:
             color: '#FFC56993'
             id: BrickTileWhiteCornerNw
           decals:
-            388: -7,-5
+            172: -7,-5
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteCornerSe
           decals:
-            445: 3,4
+            214: 3,4
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteCornerSe
           decals:
-            250: 4,-6
+            71: 4,-6
         - node:
             color: '#FFC56993'
             id: BrickTileWhiteCornerSe
           decals:
-            384: -4,-6
+            168: -4,-6
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteCornerSw
           decals:
-            426: -5,5
-            446: 2,4
+            198: -5,5
+            215: 2,4
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteCornerSw
           decals:
-            247: 2,-6
+            69: 2,-6
         - node:
             color: '#FFC56993'
             id: BrickTileWhiteCornerSw
           decals:
-            387: -7,-6
+            171: -7,-6
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteInnerNe
           decals:
-            443: 2,6
+            212: 2,6
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteInnerNw
           decals:
-            425: -4,6
+            197: -4,6
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteInnerSw
           decals:
-            447: 2,5
+            216: 2,5
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteLineE
           decals:
-            432: -3,6
-            436: 0,6
-            444: 3,5
+            202: -3,6
+            206: 0,6
+            213: 3,5
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteLineE
           decals:
-            251: 4,-5
-            252: 4,-4
-            253: 4,-3
-            254: 4,-2
+            72: 4,-5
+            73: 4,-4
+            74: 4,-3
+            75: 4,-2
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteLineN
           decals:
-            437: -1,7
+            207: -1,7
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteLineN
           decals:
-            191: -4,-18
-            192: -5,-18
-            193: -6,-18
-            242: 3,-1
+            24: -4,-18
+            25: -5,-18
+            26: -6,-18
+            64: 3,-1
         - node:
             color: '#FFC56993'
             id: BrickTileWhiteLineN
           decals:
-            389: -5,-5
+            173: -5,-5
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteLineS
           decals:
-            427: -4,5
-            428: -3,5
-            429: -2,5
-            448: 1,5
-            449: 0,5
+            199: -4,5
+            200: -3,5
+            201: -2,5
+            217: 1,5
+            218: 0,5
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteLineS
           decals:
-            248: 3,-6
+            70: 3,-6
         - node:
             color: '#FFC56993'
             id: BrickTileWhiteLineS
           decals:
-            385: -5,-6
-            386: -6,-6
+            169: -5,-6
+            170: -6,-6
         - node:
             color: '#8BCC5056'
             id: BrickTileWhiteLineW
           decals:
-            433: -2,6
-            438: 1,6
+            203: -2,6
+            208: 1,6
         - node:
             color: '#EFCF4175'
             id: BrickTileWhiteLineW
           decals:
-            189: -7,-20
-            190: -7,-19
-            243: 2,-2
-            244: 2,-3
-            245: 2,-4
-            246: 2,-5
+            22: -7,-20
+            23: -7,-19
+            65: 2,-2
+            66: 2,-3
+            67: 2,-4
+            68: 2,-5
         - node:
             color: '#52B4E996'
             id: CheckerNWSE
           decals:
-            403: -7,1
-            404: -7,2
-            405: -7,3
+            181: -7,1
+            182: -7,2
+            183: -7,3
         - node:
             color: '#79150096'
             id: CheckerNWSE
           decals:
-            321: -2,-10
-            322: -3,-10
-            323: -3,-9
-            324: -2,-9
-            325: -4,-10
-            326: -4,-9
-            327: -5,-9
-            328: -5,-10
-            329: -5,-11
-            330: -4,-11
-            331: -3,-11
-            332: -2,-11
+            114: -2,-10
+            115: -3,-10
+            116: -3,-9
+            117: -2,-9
+            118: -4,-10
+            119: -4,-9
+            120: -5,-9
+            121: -5,-10
+            122: -5,-11
+            123: -4,-11
+            124: -3,-11
+            125: -2,-11
         - node:
             color: '#EFCF4175'
             id: CheckerNWSE
           decals:
-            224: 6,-21
-            225: 5,-21
-            226: 4,-21
-            227: 3,-21
-            228: 3,-20
-            229: 3,-19
-            230: 4,-19
-            231: 2,-19
-            232: 2,-18
-            233: 3,-18
+            46: 6,-21
+            47: 5,-21
+            48: 4,-21
+            49: 3,-21
+            50: 3,-20
+            51: 3,-19
+            52: 4,-19
+            53: 2,-19
+            54: 2,-18
+            55: 3,-18
         - node:
             color: '#FFFFFFFF'
             id: Delivery
           decals:
-            208: 5,-22
-            209: 7,-22
-            210: 6,-24
-            211: 4,-24
-            261: 5,-5
-            262: 5,-6
-            263: 5,-7
-            289: 0,-10
-            290: 0,-14
-            335: -5,-11
-            365: 8,-3
-            366: 8,-2
-            367: 8,-1
-            368: -10,-3
-            369: -10,-2
-            370: -10,-1
-            390: -6,-4
-            415: -6,0
+            37: 5,-22
+            38: 7,-22
+            39: 6,-24
+            40: 4,-24
+            76: 5,-5
+            77: 5,-6
+            78: 5,-7
+            91: 0,-10
+            92: 0,-14
+            126: -5,-11
+            153: 8,-3
+            154: 8,-2
+            155: 8,-1
+            156: -10,-3
+            157: -10,-2
+            158: -10,-1
+            174: -6,-4
+            193: -6,0
         - node:
             color: '#FFC56993'
             id: FullTileOverlayGreyscale
           decals:
-            391: -7,-7
+            175: -7,-7
         - node:
             color: '#52B4E996'
             id: HalfTileOverlayGreyscale270
           decals:
-            394: -6,2
+            176: -6,2
         - node:
             color: '#52B4E996'
             id: HalfTileOverlayGreyscale90
           decals:
-            399: -4,1
-            400: -4,2
+            178: -4,1
+            179: -4,2
         - node:
             color: '#9FED5850'
             id: MiniTileCheckerBOverlay
           decals:
-            300: 3,-11
-            301: 3,-10
-            302: 3,-9
-            303: 3,-8
-            304: 2,-8
-            305: 2,-9
-            306: 2,-10
-            307: 2,-11
-            308: 1,-11
-            309: 1,-10
-            310: 1,-9
+            93: 3,-11
+            94: 3,-10
+            95: 3,-9
+            96: 3,-8
+            97: 2,-8
+            98: 2,-9
+            99: 2,-10
+            100: 2,-11
+            101: 1,-11
+            102: 1,-10
+            103: 1,-9
         - node:
             color: '#D4D4D412'
             id: MiniTileCheckerBOverlay
           decals:
-            287: 3,-16
-            288: 2,-16
+            89: 3,-16
+            90: 2,-16
         - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale
           decals:
-            406: -6,-1
-            407: -5,-1
-            408: -4,-1
+            184: -6,-1
+            185: -5,-1
+            186: -4,-1
         - node:
             color: '#79150096'
             id: QuarterTileOverlayGreyscale
           decals:
-            348: -5,-12
-            349: -4,-12
-            350: -3,-12
-            352: -2,-12
+            137: -5,-12
+            138: -4,-12
+            139: -3,-12
+            140: -2,-12
         - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale270
           decals:
-            409: -6,-3
-            410: -5,-3
-            411: -4,-3
-            414: -5,1
+            187: -6,-3
+            188: -5,-3
+            189: -4,-3
+            192: -5,1
         - node:
             color: '#DE3A3A96'
             id: StandClearGreyscale
           decals:
-            130: -3,-1
-            131: -3,-2
-            132: -3,-3
-            133: 1,-1
-            134: 1,-2
-            135: 1,-3
+            0: -3,-1
+            1: -3,-2
+            2: -3,-3
+            3: 1,-1
+            4: 1,-2
+            5: 1,-3
         - node:
             color: '#52B4E996'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
-            396: -4,0
+            177: -4,0
         - node:
             color: '#52B4E996'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
-            412: -5,0
-            413: -6,1
+            190: -5,0
+            191: -6,1
         - node:
             color: '#DE3A3A96'
             id: WarnBox
           decals:
-            186: 5,3
-            187: 5,2
-            188: 5,1
+            19: 5,3
+            20: 5,2
+            21: 5,1
         - node:
             color: '#52B4E996'
             id: WarnBoxGreyscale
           decals:
-            180: 2,2
-            181: 2,1
-            182: 2,0
-            183: 2,2
-            184: 2,1
-            185: 2,0
+            13: 2,2
+            14: 2,1
+            15: 2,0
+            16: 2,2
+            17: 2,1
+            18: 2,0
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerNE
           decals:
-            357: -8,-1
-            358: 7,-1
+            145: -8,-1
+            146: 7,-1
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerNW
           decals:
-            196: -6,-19
-            354: 6,-1
-            355: -9,-1
+            29: -6,-19
+            142: 6,-1
+            143: -9,-1
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSE
           decals:
-            353: 7,-3
-            356: -8,-3
+            141: 7,-3
+            144: -8,-3
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSW
           decals:
-            359: 6,-3
-            360: -9,-3
+            147: 6,-3
+            148: -9,-3
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSmallNW
           decals:
-            201: -6,-21
+            34: -6,-21
         - node:
             color: '#EFB34196'
             id: WarnLineE
           decals:
-            136: 0,-1
-            137: 0,-2
-            138: 0,-3
+            6: 0,-1
+            7: 0,-2
+            8: 0,-3
         - node:
             color: '#FFFFFFFF'
             id: WarnLineE
           decals:
-            202: 3,-23
-            203: 3,-22
-            363: 7,-2
-            364: -8,-2
+            35: 3,-23
+            36: 3,-22
+            151: 7,-2
+            152: -8,-2
         - node:
             color: '#8BCC5056'
             id: WarnLineGreyscaleS
           decals:
-            450: -1,5
+            219: -1,5
         - node:
             color: '#EFB34196'
             id: WarnLineS
           decals:
-            139: -2,-1
-            140: -2,-2
-            141: -2,-3
+            9: -2,-1
+            10: -2,-2
+            11: -2,-3
         - node:
             color: '#FFFFFFFF'
             id: WarnLineS
           decals:
-            195: -6,-20
-            361: -9,-2
-            362: 6,-2
+            28: -6,-20
+            149: -9,-2
+            150: 6,-2
         - node:
             color: '#FFFFFFFF'
             id: WarnLineW
           decals:
-            197: -5,-19
-            198: -4,-19
+            30: -5,-19
+            31: -4,-19
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerNe
           decals:
-            346: -2,-13
-            452: 0,3
+            135: -2,-13
+            221: 0,3
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerNw
           decals:
-            340: -5,-13
-            451: -2,3
+            129: -5,-13
+            220: -2,3
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerSe
           decals:
-            345: -2,-15
-            455: 0,1
+            134: -2,-15
+            224: 0,1
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerSw
           decals:
-            342: -5,-15
-            454: -2,1
+            131: -5,-15
+            223: -2,1
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineE
           decals:
-            347: -2,-14
-            458: 0,2
+            136: -2,-14
+            227: 0,2
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineN
           decals:
-            142: -2,3
-            337: -3,-13
-            338: -4,-13
-            453: -1,3
+            12: -2,3
+            127: -3,-13
+            128: -4,-13
+            222: -1,3
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineS
           decals:
-            343: -4,-15
-            344: -3,-15
-            456: -1,1
+            132: -4,-15
+            133: -3,-15
+            225: -1,1
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineW
           decals:
-            341: -5,-14
-            457: -2,2
+            130: -5,-14
+            226: -2,2
       type: DecalGrid
     - version: 2
       data:
@@ -672,6 +672,7 @@ entities:
             0: 65535
           -2,1:
             0: 36079
+            3: 16384
           -2,2:
             0: 8
           -1,2:
@@ -704,6 +705,7 @@ entities:
             0: 65535
           1,1:
             0: 319
+            3: 4096
           2,0:
             0: 1
           -3,-7:
@@ -726,6 +728,7 @@ entities:
             0: 4096
           -1,-6:
             0: 30513
+            3: 32768
           -1,-5:
             0: 65535
           0,-6:
@@ -781,6 +784,21 @@ entities:
           temperature: 293.15
           moles:
           - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
           - 0
           - 0
           - 0
@@ -1193,8 +1211,7 @@ entities:
     - pos: -1.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 554
     components:
     - pos: -1.5,5.5
@@ -1265,8 +1282,7 @@ entities:
     - pos: -1.5,0.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 568
     components:
     - pos: -1.5,-0.5
@@ -1322,22 +1338,19 @@ entities:
     - pos: 4.5,0.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 579
     components:
     - pos: 4.5,1.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 580
     components:
     - pos: 4.5,2.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 581
     components:
     - pos: 5.5,2.5
@@ -1348,8 +1361,7 @@ entities:
     - pos: 1.5,-18.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 583
     components:
     - pos: 2.5,-18.5
@@ -1385,15 +1397,13 @@ entities:
     - pos: 2.5,-20.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 590
     components:
     - pos: 1.5,-20.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 591
     components:
     - pos: 1.5,-17.5
@@ -1444,78 +1454,67 @@ entities:
     - pos: -4.5,-18.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 601
     components:
     - pos: -4.5,-19.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 602
     components:
     - pos: -4.5,-20.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 603
     components:
     - pos: -4.5,-21.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 604
     components:
     - pos: -4.5,-22.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 605
     components:
     - pos: -3.5,-19.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 606
     components:
     - pos: -2.5,-19.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 607
     components:
     - pos: -3.5,-22.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 608
     components:
     - pos: -5.5,-22.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 609
     components:
     - pos: -5.5,-23.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 610
     components:
     - pos: -6.5,-23.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 611
     components:
     - pos: -7.5,-23.5
@@ -1636,8 +1635,7 @@ entities:
     - pos: 0.5,-11.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 667
     components:
     - pos: 0.5,-9.5
@@ -1718,8 +1716,7 @@ entities:
     - pos: 3.5,-11.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 683
     components:
     - pos: 3.5,-10.5
@@ -1730,8 +1727,7 @@ entities:
     - pos: 4.5,-11.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 685
     components:
     - pos: -1.5,-13.5
@@ -1772,8 +1768,7 @@ entities:
     - pos: -5.5,-11.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 693
     components:
     - pos: -6.5,-1.5
@@ -1834,29 +1829,25 @@ entities:
     - pos: -3.5,-23.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 711
     components:
     - pos: 2.5,-23.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 712
     components:
     - pos: 2.5,-22.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 713
     components:
     - pos: 2.5,-23.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 718
     components:
     - pos: -6.5,3.5
@@ -1867,8 +1858,7 @@ entities:
     - pos: -7.5,3.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 720
     components:
     - pos: 5.5,3.5
@@ -1879,15 +1869,13 @@ entities:
     - pos: 6.5,3.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 914
     components:
     - pos: 2.5,-19.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
 - proto: CableHV
   entities:
   - uid: 22
@@ -1905,8 +1893,7 @@ entities:
     - pos: 4.5,6.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 247
     components:
     - pos: 2.5,-18.5
@@ -1952,15 +1939,13 @@ entities:
     - pos: 2.5,-20.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 439
     components:
     - pos: 2.5,-19.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 446
     components:
     - pos: 4.5,-18.5
@@ -1976,113 +1961,97 @@ entities:
     - pos: 4.5,-16.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 449
     components:
     - pos: 4.5,-15.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 450
     components:
     - pos: 4.5,-14.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 451
     components:
     - pos: 4.5,-13.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 452
     components:
     - pos: 4.5,-12.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 453
     components:
     - pos: 4.5,-11.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 454
     components:
     - pos: 4.5,-10.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 455
     components:
     - pos: 4.5,-9.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 456
     components:
     - pos: 4.5,-8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 457
     components:
     - pos: 4.5,-7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 458
     components:
     - pos: 5.5,-7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 459
     components:
     - pos: 6.5,-7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 460
     components:
     - pos: 6.5,-6.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 461
     components:
     - pos: 6.5,-5.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 462
     components:
     - pos: 6.5,-4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 463
     components:
     - pos: 6.5,-3.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 464
     components:
     - pos: 6.5,-2.5
@@ -2103,57 +2072,49 @@ entities:
     - pos: 6.5,0.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 468
     components:
     - pos: 6.5,1.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 469
     components:
     - pos: 6.5,2.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 470
     components:
     - pos: 6.5,3.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 471
     components:
     - pos: 6.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 472
     components:
     - pos: 5.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 473
     components:
     - pos: 4.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 474
     components:
     - pos: 4.5,5.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 475
     components:
     - pos: 3.5,5.5
@@ -2169,8 +2130,7 @@ entities:
     - pos: 3.5,7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 478
     components:
     - pos: 2.5,7.5
@@ -2181,50 +2141,43 @@ entities:
     - pos: 2.5,8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 480
     components:
     - pos: 1.5,8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 481
     components:
     - pos: 0.5,8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 482
     components:
     - pos: -0.5,8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 483
     components:
     - pos: -1.5,8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 484
     components:
     - pos: -2.5,8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 485
     components:
     - pos: -3.5,8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 486
     components:
     - pos: -3.5,7.5
@@ -2235,8 +2188,7 @@ entities:
     - pos: -4.5,7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 488
     components:
     - pos: -4.5,6.5
@@ -2252,57 +2204,49 @@ entities:
     - pos: -5.5,5.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 491
     components:
     - pos: -5.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 492
     components:
     - pos: -6.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 493
     components:
     - pos: -7.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 494
     components:
     - pos: -7.5,3.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 495
     components:
     - pos: -7.5,2.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 496
     components:
     - pos: -7.5,1.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 497
     components:
     - pos: -7.5,0.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 498
     components:
     - pos: -7.5,-0.5
@@ -2323,113 +2267,97 @@ entities:
     - pos: -7.5,-3.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 502
     components:
     - pos: -7.5,-4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 503
     components:
     - pos: -7.5,-5.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 504
     components:
     - pos: -7.5,-6.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 505
     components:
     - pos: -7.5,-7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 506
     components:
     - pos: -6.5,-7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 507
     components:
     - pos: -5.5,-7.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 508
     components:
     - pos: -5.5,-8.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 509
     components:
     - pos: -5.5,-9.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 510
     components:
     - pos: -5.5,-10.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 511
     components:
     - pos: -5.5,-11.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 512
     components:
     - pos: -5.5,-12.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 513
     components:
     - pos: -5.5,-13.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 514
     components:
     - pos: -5.5,-14.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 515
     components:
     - pos: -5.5,-15.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 516
     components:
     - pos: -5.5,-16.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 630
     components:
     - pos: 4.5,-23.5
@@ -2455,8 +2383,7 @@ entities:
     - pos: -5.5,6.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
 - proto: CableMV
   entities:
   - uid: 521
@@ -2464,8 +2391,7 @@ entities:
     - pos: 2.5,-19.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 522
     components:
     - pos: 2.5,-18.5
@@ -2476,8 +2402,7 @@ entities:
     - pos: 1.5,-18.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 524
     components:
     - pos: 2.5,-17.5
@@ -2548,8 +2473,7 @@ entities:
     - pos: 0.5,-11.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 538
     components:
     - pos: -0.5,-7.5
@@ -2600,8 +2524,7 @@ entities:
     - pos: -1.5,0.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 548
     components:
     - pos: -0.5,1.5
@@ -2627,15 +2550,13 @@ entities:
     - pos: -1.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 949
     components:
     - pos: 4.5,4.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 950
     components:
     - pos: 3.5,4.5
@@ -3001,11 +2922,6 @@ entities:
         - MedicalScannerSender: MedicalScannerReceiver
         926:
         - CloningPodSender: CloningPodReceiver
-      registeredSinks:
-        MedicalScannerSender:
-        - 928
-        CloningPodSender:
-        - 926
       type: DeviceLinkSource
 - proto: ComputerCrewMonitoring
   entities:
@@ -3148,9 +3064,7 @@ entities:
       type: Transform
     - enabled: True
       type: PointLight
-    - enabled: True
-      type: AmbientSound
-    - type: ActiveEmergencyLight
+
   - uid: 885
     components:
     - rot: -1.5707963267948966 rad
@@ -3159,9 +3073,7 @@ entities:
       type: Transform
     - enabled: True
       type: PointLight
-    - enabled: True
-      type: AmbientSound
-    - type: ActiveEmergencyLight
+
   - uid: 888
     components:
     - pos: 2.5,-7.5
@@ -3169,9 +3081,7 @@ entities:
       type: Transform
     - enabled: True
       type: PointLight
-    - enabled: True
-      type: AmbientSound
-    - type: ActiveEmergencyLight
+
   - uid: 889
     components:
     - rot: 3.141592653589793 rad
@@ -3180,9 +3090,7 @@ entities:
       type: Transform
     - enabled: True
       type: PointLight
-    - enabled: True
-      type: AmbientSound
-    - type: ActiveEmergencyLight
+
   - uid: 890
     components:
     - rot: 1.5707963267948966 rad
@@ -3191,9 +3099,7 @@ entities:
       type: Transform
     - enabled: True
       type: PointLight
-    - enabled: True
-      type: AmbientSound
-    - type: ActiveEmergencyLight
+
   - uid: 892
     components:
     - rot: 3.141592653589793 rad
@@ -3202,9 +3108,7 @@ entities:
       type: Transform
     - enabled: True
       type: PointLight
-    - enabled: True
-      type: AmbientSound
-    - type: ActiveEmergencyLight
+
 - proto: EncryptionKeyCommand
   entities:
   - uid: 982
@@ -3443,8 +3347,7 @@ entities:
       pos: -5.5,-23.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 268
     components:
     - rot: 1.5707963267948966 rad
@@ -3482,8 +3385,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 330
     components:
     - rot: 1.5707963267948966 rad
@@ -3492,8 +3394,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 370
     components:
     - rot: -1.5707963267948966 rad
@@ -3572,32 +3473,28 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 260
     components:
     - rot: 1.5707963267948966 rad
       pos: -6.5,-23.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 262
     components:
     - rot: 3.141592653589793 rad
       pos: -5.5,-22.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 263
     components:
     - rot: 1.5707963267948966 rad
       pos: -6.5,-21.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: AmbientSound
+
   - uid: 265
     components:
     - pos: -5.5,-20.5
@@ -3605,8 +3502,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 267
     components:
     - pos: -5.5,-18.5
@@ -3614,8 +3510,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 269
     components:
     - rot: 1.5707963267948966 rad
@@ -3695,8 +3590,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 286
     components:
     - rot: 3.141592653589793 rad
@@ -3705,8 +3599,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 293
     components:
     - pos: 0.5,-12.5
@@ -3714,8 +3607,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 294
     components:
     - pos: 0.5,-11.5
@@ -3723,8 +3615,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 295
     components:
     - pos: 0.5,-10.5
@@ -3732,8 +3623,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 296
     components:
     - pos: 0.5,-8.5
@@ -3741,8 +3631,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 297
     components:
     - pos: 0.5,-7.5
@@ -3750,8 +3639,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 298
     components:
     - pos: 0.5,-6.5
@@ -3780,8 +3668,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 302
     components:
     - pos: 0.5,-2.5
@@ -3866,8 +3753,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 323
     components:
     - pos: 0.5,3.5
@@ -3882,8 +3768,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 333
     components:
     - pos: 4.5,0.5
@@ -3891,8 +3776,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 369
     components:
     - rot: 3.141592653589793 rad
@@ -3954,8 +3838,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 380
     components:
     - pos: -1.5,1.5
@@ -3984,8 +3867,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 384
     components:
     - pos: -1.5,5.5
@@ -4000,8 +3882,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 389
     components:
     - pos: -1.5,-4.5
@@ -4030,8 +3911,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 393
     components:
     - pos: -1.5,-8.5
@@ -4107,8 +3987,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 272
     components:
     - rot: 3.141592653589793 rad
@@ -4157,8 +4036,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 328
     components:
     - rot: -1.5707963267948966 rad
@@ -4167,8 +4045,7 @@ entities:
       type: Transform
     - color: '#0055CCFF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 331
     components:
     - rot: 1.5707963267948966 rad
@@ -4177,8 +4054,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 332
     components:
     - rot: 1.5707963267948966 rad
@@ -4187,8 +4063,7 @@ entities:
       type: Transform
     - color: '#990000FF'
       type: AtmosPipeColor
-    - enabled: True
-      type: AmbientSound
+
   - uid: 371
     components:
     - rot: 3.141592653589793 rad
@@ -4290,8 +4165,7 @@ entities:
       pos: -4.5,-19.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 282
@@ -4300,8 +4174,7 @@ entities:
       pos: 3.5,-19.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 283
@@ -4310,8 +4183,7 @@ entities:
       pos: -0.5,-16.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 311
@@ -4320,8 +4192,7 @@ entities:
       pos: -0.5,-5.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 312
@@ -4330,8 +4201,7 @@ entities:
       pos: -0.5,-9.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 313
@@ -4340,8 +4210,7 @@ entities:
       pos: -0.5,-13.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 314
@@ -4350,8 +4219,7 @@ entities:
       pos: 1.5,-13.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 315
@@ -4360,8 +4228,7 @@ entities:
       pos: 1.5,-9.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 316
@@ -4370,8 +4237,7 @@ entities:
       pos: 4.5,-1.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 317
@@ -4380,8 +4246,7 @@ entities:
       pos: -5.5,-1.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 318
@@ -4390,8 +4255,7 @@ entities:
       pos: -0.5,2.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
   - uid: 319
@@ -4400,8 +4264,7 @@ entities:
       pos: -0.5,5.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#0055CCFF'
       type: AtmosPipeColor
 - proto: GasVentScrubber
@@ -4412,8 +4275,7 @@ entities:
       pos: -0.5,6.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#990000FF'
       type: AtmosPipeColor
   - uid: 387
@@ -4421,8 +4283,7 @@ entities:
     - pos: 3.5,-1.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#990000FF'
       type: AtmosPipeColor
   - uid: 405
@@ -4431,8 +4292,7 @@ entities:
       pos: -0.5,-10.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#990000FF'
       type: AtmosPipeColor
   - uid: 406
@@ -4441,8 +4301,7 @@ entities:
       pos: -0.5,-12.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#990000FF'
       type: AtmosPipeColor
   - uid: 411
@@ -4450,8 +4309,7 @@ entities:
     - pos: -4.5,-1.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
     - color: '#990000FF'
       type: AtmosPipeColor
 - proto: GeneratorRTG
@@ -4476,7 +4334,7 @@ entities:
     - pos: 4.5,-21.5
       parent: 1
       type: Transform
-- proto: GeneratorUranium
+- proto: GeneratorBasic15kW
   entities:
   - uid: 72
     components:
@@ -4993,22 +4851,19 @@ entities:
       pos: -5.5,-5.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
   - uid: 777
     components:
     - pos: -2.5,-0.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
   - uid: 780
     components:
     - pos: 1.5,-0.5
       parent: 1
       type: Transform
-    - enabled: False
-      type: AmbientSound
+
   - uid: 857
     components:
     - rot: -1.5707963267948966 rad
@@ -5477,12 +5332,6 @@ entities:
         - Pressed: Toggle
         807:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 816
-        - 806
-        - 826
-        - 807
       type: DeviceLinkSource
   - uid: 769
     components:
@@ -5494,10 +5343,6 @@ entities:
         - Pressed: Toggle
         820:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 824
-        - 820
       type: DeviceLinkSource
   - uid: 822
     components:
@@ -5509,10 +5354,6 @@ entities:
         - Pressed: Toggle
         819:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 825
-        - 819
       type: DeviceLinkSource
   - uid: 823
     components:
@@ -5526,11 +5367,6 @@ entities:
         - Pressed: Toggle
         821:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 817
-        - 818
-        - 821
       type: DeviceLinkSource
 - proto: SignAtmos
   entities:

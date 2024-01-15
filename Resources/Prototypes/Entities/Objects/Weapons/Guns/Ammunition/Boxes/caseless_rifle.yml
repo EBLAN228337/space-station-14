@@ -12,7 +12,7 @@
     proto: CartridgeCaselessRifle
     capacity: 60
   - type: Item
-    size: 5
+    size: Small
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -51,6 +51,7 @@
   name: ammunition box (.25 caseless)
   components:
   - type: BallisticAmmoProvider
+    fillDelay: 0.3
     capacity: 200
     proto: CartridgeCaselessRifle
   - type: Sprite
@@ -99,21 +100,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  parent: BaseMagazineBoxCaselessRifle
-  id: MagazineBoxCaselessRifleHighVelocity
-  name: ammunition box (.25 caseless high-velocity)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleHighVelocity
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: hv
 
 - type: entity
   parent: BaseMagazineBoxCaselessRifle

@@ -1,3 +1,4 @@
+using System.Numerics;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -34,12 +35,15 @@ public abstract class SharedNavMapSystem : EntitySystem
     protected sealed class NavMapComponentState : ComponentState
     {
         public Dictionary<Vector2i, int> TileData = new();
+
+        public List<NavMapBeacon> Beacons = new();
+
+        public List<NavMapAirlock> Airlocks = new();
     }
 
     [Serializable, NetSerializable]
-    protected sealed class NavMapDiffComponentState : ComponentState
-    {
-        public Dictionary<Vector2i, int> TileData = new();
-        public List<Vector2i> RemovedChunks = new();
-    }
+    public readonly record struct NavMapBeacon(Color Color, string Text, Vector2 Position);
+
+    [Serializable, NetSerializable]
+    public readonly record struct NavMapAirlock(Vector2 Position);
 }

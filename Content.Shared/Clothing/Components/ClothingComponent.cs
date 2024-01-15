@@ -12,7 +12,7 @@ namespace Content.Shared.Clothing.Components;
 [NetworkedComponent]
 [RegisterComponent]
 [Access(typeof(ClothingSystem), typeof(InventorySystem))]
-public sealed class ClothingComponent : Component
+public sealed partial class ClothingComponent : Component
 {
     [DataField("clothingVisuals")]
     [Access(typeof(ClothingSystem), typeof(InventorySystem), Other = AccessPermissions.ReadExecute)] // TODO remove execute permissions.
@@ -64,6 +64,10 @@ public sealed class ClothingComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("unisexMask")]
     public ClothingMask UnisexMask = ClothingMask.UniformFull;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("hidePants")]
+    public bool HidePants = false;
 
     public string? InSlot;
 }

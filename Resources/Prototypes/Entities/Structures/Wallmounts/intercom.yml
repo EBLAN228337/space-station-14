@@ -18,12 +18,20 @@
     toggleOnInteract: false
   - type: Intercom
   - type: Speech
+    speechVerb: Robotic
   - type: ExtensionCableReceiver
   - type: Clickable
   - type: InteractionOutline
   - type: Appearance
+  - type: ContainerFill
+    containers:
+      board: [ IntercomElectronics ]
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
   - type: Sprite
     noRot: false
+    drawdepth: SmallObjects
     sprite: Structures/Wallmounts/intercom.rsi
     layers:
     - state: base
@@ -43,8 +51,8 @@
     anchored: true
   - type: WiresPanel
   - type: Wires
-    BoardName: "Intercom"
-    LayoutId: Intercom
+    boardName: wires-board-name-intercom
+    layoutId: Intercom
   - type: ActivatableUIRequiresPower
   - type: ActivatableUI
     key: enum.IntercomUiKey.Key
@@ -75,6 +83,8 @@
           - !type:PlaySoundBehavior
             sound:
               path: /Audio/Effects/metalbreak.ogg
+              params:
+                volume: -4
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
@@ -103,6 +113,7 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
+    drawdepth: SmallObjects
     sprite: Structures/Wallmounts/intercom.rsi
     state: build
   - type: Construction

@@ -4,37 +4,58 @@ using Content.Server.Store.Conditions;
 using Content.Server.VendingMachines;
 using Content.Shared.Backmen.Store;
 using Content.Shared.DoAfter;
+using Content.Shared.Emag.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.VendingMachines;
 using Content.Shared.Wires;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.Backmen.Economy;
 
 public sealed class StoreBankSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
         base.Initialize();
         _sawmill = Logger.GetSawmill("bankvending");
         SubscribeLocalEvent<BuyStoreBankComponent, AfterInteractEvent>(OnAfterInteract,
             before: new[] { typeof(VendingMachineSystem) });
-        SubscribeLocalEvent<BuyStoreBankComponent, RestockDoAfterEvent>(OnDoAfter, before: new[]{typeof(VendingMachineSystem)});
+        SubscribeLocalEvent<BuyStoreBankComponent, RestockDoAfterEvent>(OnDoAfter,
+            before: new[] { typeof(VendingMachineSystem) });
+
+        SubscribeLocalEvent<BuyStoreBankComponent, GotEmaggedEvent>(OnEmagged);
     }
 
-    public void TryRestockInventory(EntityUid uid, IEnumerable<string>? category = null, BuyStoreBankComponent? vendComponent = null, StoreComponent? storeComponent = null)
+    private void OnEmagged(Entity<BuyStoreBankComponent> ent, ref GotEmaggedEvent args)
+    {
+        if (ent.Comp.EmagCategories.Count == 0 || !TryComp<StoreComponent>(ent, out var store))
+            return;
+        foreach (var emagCategory in ent.Comp.EmagCategories)
+        {
+            store.Categories.Add(emagCategory);
+        }
+        Dirty(ent, store);
+        args.Handled = true;
+        _audio.PlayPvs(ent.Comp.SparkSound, ent);
+    }
+
+    private void TryRestockInventory(EntityUid uid, IEnumerable<string>? category = null,
+        BuyStoreBankComponent? vendComponent = null, StoreComponent? storeComponent = null)
     {
         if (!Resolve(uid, ref vendComponent) || !Resolve(uid, ref storeComponent))
             return;
 
-        var _category = category?.ToArray() ?? Array.Empty<string>();
-        foreach (var storeComponentListing in storeComponent.Listings.Where(x=>storeComponent.Categories.Any(x.Categories.Contains)))
+        //var _category = category?.ToArray() ?? Array.Empty<string>();
+        foreach (var storeComponentListing in storeComponent.Listings.Where(x =>
+                     storeComponent.Categories.Any(x.Categories.Contains)))
         {
             var limit = storeComponentListing?.Conditions?.OfType<ListingLimitedStockCondition>().FirstOrDefault();
             if ((limit == null && category != null) || storeComponentListing == null)
@@ -48,7 +69,8 @@ public sealed class StoreBankSystem : EntitySystem
                 storeComponentListing.PurchaseAmount -= limit.Stock;
             }
         }
-        Dirty(storeComponent);
+
+        Dirty(uid, storeComponent);
         //UpdateVendingMachineInterfaceState(uid, vendComponent);
         //TryUpdateVisualState(uid, vendComponent);
     }
@@ -60,15 +82,18 @@ public sealed class StoreBankSystem : EntitySystem
 
         if (!TryComp<VendingMachineRestockComponent>(args.Args.Used, out var restockComponent))
         {
-            _sawmill.Error($"{ToPrettyString(args.Args.User)} tried to restock {ToPrettyString(uid)} with {ToPrettyString(args.Args.Used.Value)} which did not have a VendingMachineRestockComponent.");
+            _sawmill.Error(
+                $"{ToPrettyString(args.Args.User)} tried to restock {ToPrettyString(uid)} with {ToPrettyString(args.Args.Used.Value)} which did not have a VendingMachineRestockComponent.");
             return;
         }
 
         TryRestockInventory(uid, restockComponent.CanRestock, component);
 
-        Popup.PopupEntity(Loc.GetString("vending-machine-restock-done", ("this", args.Args.Used), ("user", args.Args.User), ("target", uid)), args.Args.User, PopupType.Medium);
+        _popup.PopupEntity(
+            Loc.GetString("vending-machine-restock-done", ("this", args.Args.Used), ("user", args.Args.User),
+                ("target", uid)), args.Args.User, PopupType.Medium);
 
-        Audio.PlayPvs(restockComponent.SoundRestockDone, uid, AudioParams.Default.WithVolume(-2f).WithVariation(0.2f));
+        _audio.PlayPvs(restockComponent.SoundRestockDone, uid, AudioParams.Default.WithVolume(-2f).WithVariation(0.2f));
 
         Del(args.Args.Used.Value);
 
@@ -83,7 +108,7 @@ public sealed class StoreBankSystem : EntitySystem
     {
         if (!TryComp<WiresPanelComponent>(target, out var panel) || !panel.Open)
         {
-            Popup.PopupCursor(Loc.GetString("vending-machine-restock-needs-panel-open",
+            _popup.PopupCursor(Loc.GetString("vending-machine-restock-needs-panel-open",
                     ("this", uid),
                     ("user", user),
                     ("target", target)),
@@ -95,7 +120,7 @@ public sealed class StoreBankSystem : EntitySystem
         return true;
     }
 
-    public bool TryMatchPackageToMachine(EntityUid uid,
+    private bool TryMatchPackageToMachine(EntityUid uid,
         BuyStoreBankComponent component,
         StoreComponent machineComponent,
         EntityUid user,
@@ -103,7 +128,7 @@ public sealed class StoreBankSystem : EntitySystem
     {
         if (!component.CanRestock.Any(machineComponent.Categories.Contains))
         {
-            Popup.PopupCursor(Loc.GetString("vending-machine-restock-invalid-inventory", ("this", uid), ("user", user),
+            _popup.PopupCursor(Loc.GetString("vending-machine-restock-invalid-inventory", ("this", uid), ("user", user),
                 ("target", target)), user);
 
             return false;
@@ -128,7 +153,7 @@ public sealed class StoreBankSystem : EntitySystem
 
         args.Handled = true;
 
-        var doAfterArgs = new DoAfterArgs(args.User, (float) component.RestockDelay.TotalSeconds,
+        var doAfterArgs = new DoAfterArgs(EntityManager, args.User, (float) component.RestockDelay.TotalSeconds,
             new RestockDoAfterEvent(), target,
             target: target, used: uid)
         {
@@ -141,11 +166,11 @@ public sealed class StoreBankSystem : EntitySystem
         if (!_doAfter.TryStartDoAfter(doAfterArgs))
             return;
 
-        Popup.PopupEntity(Loc.GetString("vending-machine-restock-start", ("this", uid), ("user", args.User),
+        _popup.PopupEntity(Loc.GetString("vending-machine-restock-start", ("this", uid), ("user", args.User),
                 ("target", target)),
             args.User,
             PopupType.Medium);
 
-        Audio.PlayPvs(component.SoundRestockStart, uid, AudioParams.Default.WithVolume(-8f));
+        _audio.PlayPvs(component.SoundRestockStart, uid, AudioParams.Default.WithVolume(-8f));
     }
 }

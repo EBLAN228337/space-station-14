@@ -34,6 +34,8 @@
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
+          params:
+            volume: -8
       - !type:SpawnEntitiesBehavior
         spawn:
           FoodPlateTrash:
@@ -46,7 +48,7 @@
     - Trash
   - type: PhysicalComposition
     materialComposition:
-      Glass: 100
+      Glass: 60
   - type: SpaceGarbage
 
 - type: entity
@@ -84,6 +86,8 @@
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
+          params:
+            volume: -8
       - !type:SpawnEntitiesBehavior
         spawn:
           FoodPlateSmallTrash:
@@ -91,6 +95,9 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 30
 
 - type: entity
   parent: FoodPlateTrash
@@ -144,5 +151,5 @@
     - Trash
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
+      Steel: 60
   - type: SpaceGarbage

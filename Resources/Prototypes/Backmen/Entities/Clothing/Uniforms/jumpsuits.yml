@@ -228,3 +228,267 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/blueshieldformal.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/blueshieldformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomVeryOfficial
+  name: Официальная рубашка сотрудника ЦК
+  description: Вот прелесть карпоративной жизни, стильные костюмы в тему!
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-official.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-official.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomIntern
+  name: Форма ассистента ЦК
+  description: Носитель данного костюма обязан принести чащечку кофе.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-intern.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-intern.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomMilitary
+  name: Военная униформа Начальника Безопасности ЦК
+  description: Свободная и крепкая униформа спец сил ЦК.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-military.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-military.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDeliveryman
+  name: Костюм доставщика
+  description: Пахнет пиццей
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/space_club.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/space_club.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitExplorer
+  name: explorer's uniform
+  description: A rugged set of overalls for trekking across the stars.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/explorer.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/explorer.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterExplorerCoat
+  name: explorer's labcoat
+  description: Looks like it's seen its fair share of dusty trails.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Coats/explorer_coat.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Coats/explorer_coat.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformTShirtKhakiPants
+  name: drab t-shirt and khaki pants
+  description: Some drab but functional clothing.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/tshirt_khaki.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/tshirt_khaki.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMailCarrier
+  name: mail carrier's uniform
+  description: Enemy of dogs everywhere.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/mailman.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/mailman.rsi
+#    - type: ClothingAddFaction
+#      faction: Mailman
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformSkirtMailCarrier
+  name: mail carrier's jumpskirt
+  description: Enemy of dogs everywhere.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/Jumpskirt/mailman.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/Jumpskirt/mailman.rsi
+#    - type: ClothingAddFaction
+#      faction: Mailman
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitUEG
+  name: Водолазка представителя ОПЗ
+  description: Лёгкая и комфортная водолазка
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/eug-jumpsuit.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/eug-jumpsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitUEGofficer
+  name: Униформа офицера ОПЗ
+  description: Униформа с безполезным камуфляжем. Лучше не связыватся с её обладателями
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/eug-officer-jumpsuit.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Uniforms/jumpsuit/eug-officer-jumpsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitcannonier
+  name: Униформа Канонира
+  description: Полевая униформа канонира.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/cannonier.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/cannonier.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitcannonieruniform
+  name: Парадная Униформа Канонира
+  description: Парадная униформа канонира.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/cannonier_uniform.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/cannonier_uniform.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitprivateofficer
+  name: Униформа Приватного Офицера СБ ЦК
+  description: Полевая униформа Приватного Офицера СБ ЦК
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-private_officer.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-private_officer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitseniorofficer
+  name: Униформа Старшего Офицера ЦК
+  description: Полевая униформа Старшего Офицера ЦК
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitseniorofficeruniform
+  name: Парадная Униформа Старшего Офицера ЦК
+  description: Парадная униформа Старшего Офицера ЦК
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer_uniform.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer_uniform.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitinformationsecurityanalyst
+  name: Униформа Аналитика Информационной Безопасности
+  description: Полевая униформа Аналитика Информационной Безопасности
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/information_security_analyst.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/information_security_analyst.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitstutman
+  name: Униформа Штурмана
+  description: Полевая униформа Штурмана
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/stutman.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/stutman.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitstutmanuniform
+  name: Парадная Униформа Штурмана
+  description: Парадная униформа Штурмана
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/stutman_uniform.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/stutman_uniform.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitmaidblack
+  name: Черный Костюм Горничной
+  description: По всей видимости это классический костюм французской горничной.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/maid_black.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/maid_black.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitmaidblue
+  name: Синий Костюм Горничной
+  description: Он такой же как и черный, но синий, не обижайте его владельца ;)
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/maid_blue.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/maid_blue.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitmaidpink
+  name: Розовый Костюм Горничной
+  description: Он такой же как и черный, но розовый, не обижайте его владельца ;)
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/maid_pink.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/maid_pink.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNavalUniform
+  name: Морская униформа
+  description: Униформа так и кричит "за ВДВ"
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/naval_uniform.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Uniforms/jumpsuit/naval_uniform.rsi

@@ -4,6 +4,7 @@ job-name-cadet = Security Cadet
 job-name-hos = Head of Security
 job-name-detective = Detective
 job-name-brigmedic = Brigmedic
+job-name-borg = Cyborg
 job-name-scientist = Scientist
 job-name-research-assistant = Research Assistant
 job-name-rd = Research Director
@@ -47,6 +48,7 @@ job-name-zookeeper = Zookeeper
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Atmospheric Technician
 JobBartender = Bartender
+JobBorg = Borg
 JobBotanist = Botanist
 JobBoxer = Boxer
 JobCaptain = Captain

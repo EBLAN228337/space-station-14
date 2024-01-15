@@ -38,6 +38,7 @@ public sealed class ChemistryJsonGenerator
         var serializeOptions = new JsonSerializerOptions
         {
             WriteIndented = true,
+            NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals, // Corvax-Wiki
             Converters =
             {
                 new UniversalJsonConverter<ReagentEffect>(),
@@ -45,7 +46,7 @@ public sealed class ChemistryJsonGenerator
                 new UniversalJsonConverter<ReagentEffectsEntry>(),
                 new UniversalJsonConverter<DamageSpecifier>(),
                 new FixedPointJsonConverter()
-            }
+            },
         };
 
         file.Write(JsonSerializer.Serialize(prototypes, serializeOptions));

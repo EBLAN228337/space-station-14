@@ -4,7 +4,7 @@ using Content.Shared.Damage;
 namespace Content.Server.Body.Components
 {
     [RegisterComponent, Access(typeof(RespiratorSystem))]
-    public sealed class RespiratorComponent : Component
+    public sealed partial class RespiratorComponent : Component
     {
         /// <summary>
         ///     Saturation level. Reduced by CycleDelay each tick.
@@ -60,6 +60,12 @@ namespace Content.Server.Body.Components
         public float CycleDelay = 2.0f;
 
         public float AccumulatedFrametime;
+
+        /// <summary>
+        /// Whether the entity is immuned to pressure (i.e possess the PressureImmunity component)
+        /// </summary>
+        [ViewVariables]
+        public bool HasImmunity = false;
     }
 }
 

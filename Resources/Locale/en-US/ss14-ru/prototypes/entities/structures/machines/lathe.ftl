@@ -1,6 +1,5 @@
 ent-BaseLathe = lathe
-
-  .desc = { ent-['BaseMachinePowered', 'ConstructibleMachine'].desc }
+  .desc = { ent-BaseMachinePowered.desc }
 ent-Autolathe = autolathe
     .desc = It produces items using metal and glass.
 ent-Protolathe = protolathe
@@ -11,6 +10,8 @@ ent-ExosuitFabricator = exosuit fabricator
     .desc = Creates parts for robotics and other mechanical needs
 ent-SecurityTechFab = security techfab
     .desc = Prints equipment for use by security crew.
+ent-AmmoTechFab = ammo techfab
+    .desc = Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
 ent-MedicalTechFab = medical techfab
     .desc = Prints equipment for use by the medbay.
 ent-UniformPrinter = uniform printer

@@ -6,7 +6,7 @@ namespace Content.Server.Speech.EntitySystems;
 
 public sealed class LizardAccentSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Corvax-Localization
 
     public override void Initialize()
     {
@@ -40,7 +40,7 @@ public sealed class LizardAccentSystem : EntitySystem
         message = Regex.Replace(
             message,
             "С+",
-            _random.Pick(new List<string>() { "Сс", "Ссс" })
+            _random.Pick(new List<string>() { "СС", "ССС" })
         );
         // з => ссс
         message = Regex.Replace(
@@ -52,7 +52,7 @@ public sealed class LizardAccentSystem : EntitySystem
         message = Regex.Replace(
             message,
             "З+",
-            _random.Pick(new List<string>() { "Сс", "Ссс" })
+            _random.Pick(new List<string>() { "СС", "ССС" })
         );
         // ш => шшш
         message = Regex.Replace(
@@ -64,7 +64,7 @@ public sealed class LizardAccentSystem : EntitySystem
         message = Regex.Replace(
             message,
             "Ш+",
-            _random.Pick(new List<string>() { "Шш", "Шшш" })
+            _random.Pick(new List<string>() { "ШШ", "ШШШ" })
         );
         // ч => щщщ
         message = Regex.Replace(
@@ -76,7 +76,7 @@ public sealed class LizardAccentSystem : EntitySystem
         message = Regex.Replace(
             message,
             "Ч+",
-            _random.Pick(new List<string>() { "Щщ", "Щщщ" })
+            _random.Pick(new List<string>() { "ЩЩ", "ЩЩЩ" })
         );
         // Corvax-Localization-End
         args.Message = message;

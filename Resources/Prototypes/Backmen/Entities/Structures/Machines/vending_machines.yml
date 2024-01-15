@@ -7,9 +7,9 @@
       categories:
         - DiscountDansInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -25,8 +25,12 @@
   id: BackmenVendingLootBox
   name: ЛутБоксы
   suffix: backmen
+  description: 123
   components:
     - type: VendingMachine
+      pack: VendingLootboxInventory
+      dispenseOnHitChance: 0.01
+      dispenseOnHitThreshold: 50
       offState: off
       brokenState: broken
       normalState: normal-unshaded
@@ -43,14 +47,20 @@
           shader: unshaded
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: PointLight
+      radius: 1.5
+      energy: 1.6
+      color: "#6148c7"
     - type: Store
       categories:
         - VendingLootboxInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
+      emagCategories:
+        - VendingLootboxInventoryEmag
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
       singleUser: true
@@ -69,9 +79,9 @@
       categories:
         - CigaretteMachineInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -91,9 +101,9 @@
       categories:
         - RobustSoftdrinksInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -113,9 +123,9 @@
       categories:
         - RobustSoftdrinksInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -135,9 +145,9 @@
       categories:
         - RobustSoftdrinksInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -157,9 +167,9 @@
       categories:
         - DonutInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -179,9 +189,9 @@
       categories:
         - ChangInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -201,9 +211,9 @@
       categories:
         - HotDrinksMachineInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -223,9 +233,9 @@
       categories:
         - BodaInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -245,9 +255,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -267,9 +277,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -289,9 +299,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -311,9 +321,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -333,9 +343,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCredits
+        - SpaceCash
       balance:
-        SpaceCredits: 0
+        SpaceCash: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -346,3 +356,197 @@
         - key: enum.StoreUiKey.Key
           type: StoreBoundUserInterface
 
+- type: entity
+  parent: VendingMachineSpaceUp
+  id: BackmenVendingMachineSpaceUp
+  suffix: backmen
+  components:
+    - type: Store
+      categories:
+        - SpaceUpInventory
+      currencyWhitelist:
+        - SpaceCash
+      balance:
+        SpaceCash: 0
+    - type: BuyStoreBank
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+      singleUser: true
+    - type: ActivatableUIRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+
+- type: entity
+  parent: VendingMachineColaRed
+  id: BackmenVendingMachineColaRed
+  suffix: backmen
+  components:
+    - type: Store
+      categories:
+        - ColaRedInventory
+      currencyWhitelist:
+        - SpaceCash
+      balance:
+        SpaceCash: 0
+    - type: BuyStoreBank
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+      singleUser: true
+    - type: ActivatableUIRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+
+- type: entity
+  parent: VendingMachineShamblersJuice
+  id: BackmenVendingMachineShamblersJuice
+  suffix: backmen
+  components:
+    - type: Store
+      categories:
+        - ShamblersJuiceInventory
+      currencyWhitelist:
+        - SpaceCash
+      balance:
+        SpaceCash: 0
+    - type: BuyStoreBank
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+      singleUser: true
+    - type: ActivatableUIRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+
+- type: entity
+  parent: VendingMachinePwrGame
+  id: BackmenVendingMachinePwrGame
+  suffix: backmen
+  components:
+    - type: Store
+      categories:
+        - PwrGameInventory
+      currencyWhitelist:
+        - SpaceCash
+      balance:
+        SpaceCash: 0
+    - type: BuyStoreBank
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+      singleUser: true
+    - type: ActivatableUIRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+
+- type: entity
+  parent: VendingMachineDrGibb
+  id: BackmenVendingMachineDrGibb
+  suffix: backmen
+  components:
+    - type: Store
+      categories:
+        - DrGibbInventory
+      currencyWhitelist:
+        - SpaceCash
+      balance:
+        SpaceCash: 0
+    - type: BuyStoreBank
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+      singleUser: true
+    - type: ActivatableUIRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+
+- type: entity
+  parent: VendingMachineStarkist
+  id: BackmenVendingMachineStarkist
+  suffix: backmen
+  components:
+    - type: Store
+      categories:
+        - StarkistInventory
+      currencyWhitelist:
+        - SpaceCash
+      balance:
+        SpaceCash: 0
+    - type: BuyStoreBank
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+      singleUser: true
+    - type: ActivatableUIRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+
+- type: entity
+  parent: VendingMachineHappyHonk
+  id: BackmenVendingMachineHappyHonk
+  suffix: backmen
+  components:
+    - type: Store
+      categories:
+        - HappyHonkInventory
+      currencyWhitelist:
+        - SpaceCash
+      balance:
+        SpaceCash: 0
+    - type: BuyStoreBank
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+      singleUser: true
+    - type: ActivatableUIRequiresPower
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxingDrobe
+  suffix: backmen
+  components:
+  - type: VendingMachine
+    pack: VendingLootboxInventory
+    dispenseOnHitChance: 0.01
+    dispenseOnHitThreshold: 50
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: Backmen/Structures/Machines/VendingMachines/boxingdrobe.rsi
+    layers:
+    - state: off
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: normal-unshaded
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Store
+    categories:
+      - BoxingDrobeInventory
+    currencyWhitelist:
+      - SpaceCash
+    balance:
+      SpaceCash: 0
+  - type: BuyStoreBank
+    emagCategories:
+      - BoxingDrobeInventoryEmag
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+    singleUser: true
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      - key: enum.StoreUiKey.Key
+        type: StoreBoundUserInterface

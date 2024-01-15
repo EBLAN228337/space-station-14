@@ -1,10 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
+using Content.Server.Backmen.CartridgeLoader.Cartridges;
+using Content.Server.Backmen.Economy.ATM;
+using Content.Shared.Backmen.Economy;
+using Content.Shared.Backmen.Economy.ATM;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
 using Content.Shared.Roles;
+using Robust.Shared.GameStates;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Backmen.Economy;
 
@@ -12,13 +18,81 @@ namespace Content.Server.Backmen.Economy;
     {
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+        [Dependency] private readonly ATMSystem _atmSystem = default!;
 
-        [ViewVariables]
-        public Dictionary<string, BankAccountComponent> ActiveBankAccounts = new();
+        [ViewVariables] public readonly Dictionary<string, Entity<BankAccountComponent>> ActiveBankAccounts = new();
+
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
+            SubscribeLocalEvent<BankAccountComponent, BankChangeBalanceEvent>(OnBalanceChange);
+            SubscribeLocalEvent<BankAccountComponent, ComponentGetStateAttemptEvent>(IsCardInHand);
+        }
+
+        private void IsCardInHand(Entity<BankAccountComponent> component, ref ComponentGetStateAttemptEvent args)
+        {
+
+        }
+
+        private void OnBalanceChange(Entity<BankAccountComponent> component, ref BankChangeBalanceEvent args)
+        {
+            if (args.Handled)
+            {
+                return;
+            }
+            args.Handled = true;
+
+            if (component.Comp.IsInfinite)
+            {
+                return;
+            }
+
+            component.Comp.SetBalance(args.Balance);
+            Dirty(component);
+
+            var ev = new ChangeBankAccountBalanceEvent(args.Balance - args.OldBalance, args.Balance);
+            RaiseLocalEvent(component, ev);
+
+            var parent = Transform(component).ParentUid;
+            if (parent.IsValid() && HasComp<AtmComponent>(parent))
+            {
+                _atmSystem.UpdateUi(parent, component);
+            }
+        }
+
+        public bool TryChangeBalanceBy(Entity<BankAccountComponent> uid, FixedPoint2 amount)
+        {
+            if (uid.Comp.Balance + amount < 0)
+                return false;
+            var oldBalance = uid.Comp.Balance;
+
+            var newBalance = uid.Comp.Balance + amount;
+
+            var ev = new BankChangeBalanceEvent()
+            {
+                OldBalance = oldBalance,
+                Balance = newBalance
+            };
+            RaiseLocalEvent(uid, ev, true);
+
+            return ev.Handled;
+        }
+        public bool TrySetBalance(Entity<BankAccountComponent> uid, FixedPoint2 amount)
+        {
+
+            if (uid.Comp.Balance + amount < 0)
+                return false;
+            var oldBalance = uid.Comp.Balance;
+
+            var ev = new BankChangeBalanceEvent()
+            {
+                OldBalance = oldBalance,
+                Balance = amount
+            };
+            RaiseLocalEvent(uid, ev, true);
+
+            return ev.Handled;
         }
 
         private void OnCleanup(RoundRestartCleanupEvent ev)
@@ -26,57 +100,61 @@ namespace Content.Server.Backmen.Economy;
             Clear();
         }
 
-        public bool TryGetBankAccount(string? bankAccountNumber, [MaybeNullWhen(false)] out BankAccountComponent bankAccount)
+        public bool TryGetBankAccount(EntityUid? bankAccountOwner, [NotNullWhen(true)] out Entity<BankAccountComponent>? bankAccount)
         {
-            bankAccount = GetBankAccount(bankAccountNumber);
-            if (bankAccount == null || bankAccountNumber != bankAccount.AccountNumber)
-                return false;
-            return true;
+            if (TryComp<BankAccountComponent>(bankAccountOwner, out var entBankAccount))
+            {
+                bankAccount = (bankAccountOwner.Value, entBankAccount);
+                return true;
+            }
+
+            bankAccount = null;
+            return false;
         }
-        public bool TryGetBankAccountWithPin(string? bankAccountNumber, string? bankAccountPin, [MaybeNullWhen(false)] out BankAccountComponent bankAccount)
+
+        /// <summary>
+        /// ТОЛЬКО ИЗ РУЧНОГО НАБОРА ПОЛЬЗОВАТЕЛЯ!!!
+        /// </summary>
+        /// <param name="bankAccountNumber"></param>
+        /// <param name="bankAccount"></param>
+        /// <returns></returns>
+        public bool TryGetBankAccount(string? bankAccountNumber, [NotNullWhen(true)] out Entity<BankAccountComponent>? bankAccount)
         {
             bankAccount = null;
-            if (bankAccountPin == null)
+            if (bankAccountNumber == null)
+            {
                 return false;
-            bankAccount = GetBankAccount(bankAccountNumber);
-            if (bankAccount == null ||
-                bankAccountNumber != bankAccount.AccountNumber ||
-                bankAccountPin != bankAccount.AccountPin)
+            }
+
+            if (!ActiveBankAccounts.TryGetValue(bankAccountNumber, out var bankInfo))
+            {
                 return false;
+            }
+            DebugTools.Assert(bankAccountNumber == bankInfo.Comp.AccountNumber);
+            bankAccount = bankInfo;
             return true;
         }
-        public BankAccountComponent? GetBankAccount(string? bankAccountNumber)
+
+        public Entity<BankAccountComponent>? CreateNewBankAccount(EntityUid idCardId, string? bankAccountNumber = null, bool isInfinite = false)
         {
-            if (bankAccountNumber == null)
-                return null;
-            ActiveBankAccounts.TryGetValue(bankAccountNumber, out var bankAccount);
-            return bankAccount;
-        }
-        public bool IsBankAccountExists(string? bankAccountNumber)
-        {
-            if (bankAccountNumber == null)
-                return false;
-            return ActiveBankAccounts.ContainsKey(bankAccountNumber);
-        }
-        public BankAccountComponent? CreateNewBankAccount(int? bankAccountNumber = null, bool _isInfinite = false)
-        {
-            int number;
+
             if(bankAccountNumber == null)
             {
+                int number;
                 do
                 {
                     number = _robustRandom.Next(111111, 999999);
                 } while (ActiveBankAccounts.ContainsKey(number.ToString()));
-            }
-            else
-            {
-                number = (int) bankAccountNumber;
+                bankAccountNumber = number.ToString();
             }
             var bankAccountPin = GenerateBankAccountPin();
-            var bankAccountNumberStr = number.ToString();
-            var bankAccount = new BankAccountComponent(bankAccountNumberStr, bankAccountPin, isInfinite: _isInfinite);
-            return ActiveBankAccounts.TryAdd(bankAccountNumberStr, bankAccount)
-                ? bankAccount
+            var bankAccount = EnsureComp<BankAccountComponent>(idCardId);
+            bankAccount.AccountNumber = bankAccountNumber;
+            bankAccount.AccountPin = bankAccountPin;
+            bankAccount.IsInfinite = isInfinite;
+            Dirty(idCardId,bankAccount);
+            return ActiveBankAccounts.TryAdd(bankAccountNumber, (idCardId,bankAccount))
+                ? (idCardId, bankAccount)
                 : null;
         }
         private string GenerateBankAccountPin()
@@ -88,85 +166,114 @@ namespace Content.Server.Backmen.Economy;
             }
             return pin;
         }
-        public bool TryWithdrawFromBankAccount(string? bankAccountNumber, string? bankAccountPin, KeyValuePair<string, FixedPoint2> currency)
+
+        public bool TryWithdrawFromBankAccount(Entity<BankAccountComponent>? bankAccount, KeyValuePair<string, FixedPoint2> currency)
         {
-            if (!TryGetBankAccountWithPin(bankAccountNumber, bankAccountPin, out var bankAccount))
+            if (bankAccount == null)
+            {
                 return false;
-            if (currency.Key != bankAccount.CurrencyType)
+            }
+            return TryWithdrawFromBankAccount(bankAccount.Value, currency);
+        }
+
+        public bool TryWithdrawFromBankAccount(EntityUid bankAccount,
+            KeyValuePair<string, FixedPoint2> currency, BankAccountComponent? bankAccountComponent)
+        {
+            return Resolve(bankAccount, ref bankAccountComponent) && TryWithdrawFromBankAccount((bankAccount, bankAccountComponent), currency);
+        }
+
+        public bool TryWithdrawFromBankAccount(Entity<BankAccountComponent> bankAccount, KeyValuePair<string, FixedPoint2> currency)
+        {
+            if (currency.Key != bankAccount.Comp.CurrencyType)
                 return false;
 
-            var oldBalance = bankAccount.Balance;
-            var result = bankAccount.TryChangeBalanceBy(-currency.Value);
+            var oldBalance = bankAccount.Comp.Balance;
+            var result = TryChangeBalanceBy(bankAccount, -currency.Value);
             if (result)
+            {
                 _adminLogger.Add(
                     LogType.Transactions,
                     LogImpact.Low,
-                    $"Account {bankAccount.AccountNumber} ({bankAccount.AccountName ?? "??"})  balance was changed by {-currency.Value}, from {oldBalance} to {bankAccount.Balance}");
+                    $"Account {bankAccount.Comp.AccountNumber} ({bankAccount.Comp.AccountName ?? "??"})  balance was changed by {-currency.Value}, from {oldBalance} to {bankAccount.Comp.Balance}");
+            }
+
             return result;
         }
+
         public bool TryInsertToBankAccount(string? bankAccountNumber, KeyValuePair<string, FixedPoint2> currency)
         {
             if (!TryGetBankAccount(bankAccountNumber, out var bankAccount))
                 return false;
-            if (currency.Key != bankAccount.CurrencyType)
+
+            if (!TryInsertToBankAccount(bankAccount, currency))
                 return false;
 
-            var oldBalance = bankAccount.Balance;
-            var result = bankAccount.TryChangeBalanceBy(currency.Value);
+            return true;
+        }
+
+        public bool TryInsertToBankAccount(Entity<BankAccountComponent>? bankAccount, KeyValuePair<string, FixedPoint2> currency)
+        {
+            if (bankAccount == null)
+                return false;
+
+            return TryInsertToBankAccount(bankAccount.Value, currency);
+        }
+
+        public bool TryInsertToBankAccount(Entity<BankAccountComponent> bankAccount, KeyValuePair<string, FixedPoint2> currency)
+        {
+            if (currency.Key != bankAccount.Comp.CurrencyType)
+                return false;
+
+            var oldBalance = bankAccount.Comp.Balance;
+            var result = TryChangeBalanceBy(bankAccount, currency.Value);
             if (result)
+            {
                 _adminLogger.Add(
                     LogType.Transactions,
                     LogImpact.Low,
-                    $"Account {bankAccount.AccountNumber} ({bankAccount.AccountName ?? "??"})  balance was changed by {-currency.Value}, from {oldBalance} to {bankAccount.Balance}");
+                    $"Account {bankAccount.Comp.AccountNumber} ({bankAccount.Comp.AccountName ?? "??"})  balance was changed by {-currency.Value}, from {oldBalance} to {bankAccount.Comp.Balance}");
+            }
+
             return result;
         }
-        public bool TryTransferFromToBankAccount(string? bankAccountFromNumber, string? bankAccountFromPin, string? bankAccountToNumber, FixedPoint2 amount)
+
+        public bool TryTransferFromToBankAccount(Entity<BankAccountComponent>? bankAccountFromNumber,
+            Entity<BankAccountComponent>? bankAccountToNumber, FixedPoint2 amount)
         {
             if (bankAccountFromNumber == null || bankAccountToNumber == null)
                 return false;
-            if (!TryGetBankAccountWithPin(bankAccountFromNumber, bankAccountFromPin, out var bankAccountFrom))
+            return TryTransferFromToBankAccount(bankAccountFromNumber.Value, bankAccountToNumber.Value, amount);
+        }
+
+        public bool TryTransferFromToBankAccount(Entity<BankAccountComponent> bankAccountFrom, Entity<BankAccountComponent> bankAccountTo, FixedPoint2 amount)
+        {
+            if (bankAccountFrom.Comp.CurrencyType != bankAccountTo.Comp.CurrencyType)
                 return false;
-            if (!ActiveBankAccounts.TryGetValue(bankAccountToNumber, out var bankAccountTo))
+            if (!TryChangeBalanceBy(bankAccountFrom, -amount))
                 return false;
-            if (bankAccountFrom.CurrencyType != bankAccountTo.CurrencyType)
-                return false;
-            if (bankAccountFrom.TryChangeBalanceBy(-amount))
+            var result = TryChangeBalanceBy(bankAccountTo,amount);
+            if (result)
             {
-                var result = bankAccountTo.TryChangeBalanceBy(amount);
-                if (result)
-                    _adminLogger.Add(
-                        LogType.Transactions,
-                        LogImpact.Low,
-                        $"Account {bankAccountFrom.AccountNumber} ({bankAccountFrom.AccountName ?? "??"})  transfered {amount} to account {bankAccountTo.AccountNumber} ({bankAccountTo.AccountName ?? "??"})");
-                return result;
+                _adminLogger.Add(
+                    LogType.Transactions,
+                    LogImpact.Low,
+                    $"Account {bankAccountFrom.Comp.AccountNumber} ({bankAccountFrom.Comp.AccountName ?? "??"})  transfered {amount} to account {bankAccountTo.Comp.AccountNumber} ({bankAccountTo.Comp.AccountName ?? "??"})");
             }
-            return false;
+            else
+            {
+                TryChangeBalanceBy(bankAccountFrom, amount); // rollback
+            }
+
+            return result;
         }
-        public bool TryGetBankAccountCurrencyType(string? bankAccountNumber, out string? currencyType)
-        {
-            currencyType = null;
-            if (bankAccountNumber == null)
-                return false;
-            if (!ActiveBankAccounts.TryGetValue(bankAccountNumber, out var bankAccount))
-                return false;
-            currencyType = bankAccount.CurrencyType;
-            return true;
-        }
-        public string? GetBankAccountName(string? bankAccountNumber)
-        {
-            if (bankAccountNumber == null)
-                return null;
-            if (!ActiveBankAccounts.TryGetValue(bankAccountNumber, out var bankAccount))
-                return null;
-            return bankAccount.AccountName;
-        }
+
         public void TryGenerateStartingBalance(BankAccountComponent bankAccount, JobPrototype jobPrototype)
         {
-            if (jobPrototype.MaxBankBalance > 0)
-            {
-                var newBalance = FixedPoint2.New(_robustRandom.Next(jobPrototype.MinBankBalance, jobPrototype.MaxBankBalance));
-                bankAccount.SetBalance(newBalance);
-            }
+            if (jobPrototype.MaxBankBalance <= 0)
+                return;
+
+            var newBalance = FixedPoint2.New(_robustRandom.Next(jobPrototype.MinBankBalance, jobPrototype.MaxBankBalance));
+            bankAccount.SetBalance(newBalance);
         }
         public void Clear()
         {

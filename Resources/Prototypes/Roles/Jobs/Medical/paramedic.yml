@@ -10,30 +10,29 @@
     - !type:OverallPlaytimeRequirement
       time: 54000 # 15 hrs
   startingGear: ParamedicGear
-  icon: "Paramedic"
+  icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
   access:
   - Medical
   - Maintenance
-  - External
   extendedAccess:
   - Chemistry
   #start-backmen: currency
-  minBankBalance: 300
-  maxBankBalance: 500
+  minBankBalance: 150
+  maxBankBalance: 250
   wageDepartment: Medical
-  wage: 75
+  wage: 35
   #end-backmen: currency
 
 - type: startingGear
   id: ParamedicGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackMedicalFilled
-    shoes: ClothingShoesColorWhite
+    back: ClothingBackpackParamedicFilled
+    shoes: ClothingShoesColorBlue
     id: ParamedicPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltParamedicFilled
-  innerclothingskirt: ClothingUniformJumpskirtParamedic
-  satchel: ClothingBackpackSatchelMedicalFilled
-  duffelbag: ClothingBackpackDuffelMedicalFilled
+  innerClothingSkirt: ClothingUniformJumpskirtParamedic
+  satchel: ClothingBackpackSatchelParamedicFilled
+  duffelbag: ClothingBackpackDuffelParamedicFilled

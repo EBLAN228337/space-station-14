@@ -15,9 +15,10 @@
       - BackmenVendingMachineCola
       - BackmenVendingMachineColaBlack
       - BackmenVendingMachineSovietSoda
-      - VendingMachineShamblersJuice
-      - VendingMachinePwrGame
+      - BackmenVendingMachineShamblersJuice
+      - BackmenVendingMachinePwrGame
       - BackmenVendingMachineSoda
-      - VendingMachineStarkist
-      - VendingMachineSpaceUp
+      - BackmenVendingMachineDrGibb
+      - BackmenVendingMachineStarkist
+      - BackmenVendingMachineSpaceUp
     chance: 1

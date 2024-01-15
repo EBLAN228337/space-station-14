@@ -5,6 +5,11 @@
     - Syndicate
     - Xeno
     - PetsNT
+    - Zombie
+    - Blob
+    - Flesh
+    - Revolutionary
+    - SuperZloy
 
 - type: npcFaction
   id: NanoTrasen
@@ -12,6 +17,12 @@
   - SimpleHostile
   - Syndicate
   - Xeno
+  - Zombie
+  - Blob
+  - Flesh
+  - Revolutionary
+  - MalfunctioningRobot
+  - SuperZloy
 
 - type: npcFaction
   id: Mouse
@@ -26,7 +37,11 @@
   hostile:
   - Mouse
   - SimpleHostile
+  - Zombie
   - Xeno
+  - Blob
+  - Flesh
+  - SuperZloy
 
 - type: npcFaction
   id: SimpleHostile
@@ -35,6 +50,11 @@
   - Syndicate
   - Passive
   - PetsNT
+  - Zombie
+  - Blob
+  - Flesh
+  - Revolutionary
+  - SuperZloy
 
 - type: npcFaction
   id: SimpleNeutral
@@ -46,6 +66,10 @@
   - SimpleHostile
   - Xeno
   - PetsNT
+  - Zombie
+  - Blob
+  - Flesh
+  - SuperZloy
 
 - type: npcFaction
   id: Xeno
@@ -54,3 +78,36 @@
   - Syndicate
   - Passive
   - PetsNT
+  - Zombie
+  - Blob
+  - Flesh
+  - Revolutionary
+  - SuperZloy
+
+- type: npcFaction
+  id: Zombie
+  hostile:
+  - NanoTrasen
+  - SimpleNeutral
+  - SimpleHostile
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Blob
+  - Flesh
+  - SuperZloy
+
+
+  - Revolutionary
+
+- type: npcFaction
+  id: Revolutionary
+  hostile:
+  - NanoTrasen
+  - Zombie
+  - SimpleHostile
+  - Dragon
+  - MalfunctioningRobot
+  - Blob
+  - Flesh
+  - SuperZloy

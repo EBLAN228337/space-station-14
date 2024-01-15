@@ -28,6 +28,8 @@
     ClothingHeadHatShrineMaidenWig: 2
     ClothingOuterSuitShrineMaiden: 2
     Gohei: 2
+    ClothingHeadHatRedRacoon: 2
+    ClothingOuterRedRacoon: 2
     ClothingHeadPaperSack: 2
     ClothingHeadPaperSackSmile: 2
     ClothingEyesBlindfold: 1
@@ -40,6 +42,10 @@
     ClothingMaskScaredMime: 1
     ClothingUniformJumpsuitKimono: 1
     ClothingHeadHatCasa: 1
+    ClothingHeadHatHairflower: 1
+    ClothingHeadHatGladiator: 1
+    ClothingUniformJumpsuitGladiator: 1
+    ClothingHeadHatStetson: 2 # backmen
   emaggedInventory:
     ClothingShoesBling: 1
     ClothingOuterDogi: 1

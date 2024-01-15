@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/d917f4c2a088419d5c3aec7656b7ff8cebd1822e idcluwne made by brainfood1183 (github) for ss14, idbrigmedic made by PuroSlavKing (Github)",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/d917f4c2a088419d5c3aec7656b7ff8cebd1822e idcluwne made by brainfood1183 (github) for ss14, idbrigmedic made by PuroSlavKing (Github), pirate made by brainfood1183 (github)",
   "size": {
     "x": 32,
     "y": 32
@@ -12,9 +12,6 @@
     },
     {
       "name": "centcom"
-    },
-    {
-      "name": "black"
     },
     {
       "name": "ert_chaplain"
@@ -179,6 +176,9 @@
       "name": "orange"
     },
     {
+      "name": "pirate"
+    },
+    {
       "name": "prisoner_001"
     },
     {
@@ -205,8 +205,20 @@
     {
       "name": "syndie"
     },
-	{
+    {
       "name": "idcluwne"
+    },
+    {
+      "name": "idseniorengineer"
+    },
+    {
+      "name": "idseniorresearcher"
+    },
+    {
+      "name": "idseniorphysician"
+    },
+    {
+      "name": "idseniorofficer"
     },
     {
       "name": "gold-inhand-left",
@@ -246,14 +258,6 @@
     },
     {
       "name": "blue-inhand-right",
-      "directions": 4
-    },
-        {
-      "name": "black-inhand-left",
-      "directions": 4
-    },
-        {
-      "name": "black-inhand-right",
       "directions": 4
     }
   ]

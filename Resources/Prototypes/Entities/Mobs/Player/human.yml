@@ -4,43 +4,16 @@
   parent: BaseMobHuman
   id: MobHuman
   components:
-  - type: CombatMode
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
-  - type: MindContainer
-    showExamineInfo: true
-  - type: Input
-    context: "human"
-  - type: MobMover
-  - type: InputMover
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 1.0
-    damageRecovery:
-      types:
-        Asphyxiation: -1.0
-  - type: Alerts
-  - type: Actions
-  - type: Eye
-  - type: CameraRecoil
-  - type: Examiner
-  - type: CanHostGuardian
-  - type: NpcFactionMember
-    factions:
-    - NanoTrasen
+    - type: PotentialPsionic
 
 #Syndie
 - type: entity
   parent: MobHuman
   id: MobHumanSyndicateAgent
-  name: Syndicate Agent
+  name: syndicate agent
+  suffix: Human
   components:
     - type: Loadout
-      prototype: SyndicateOperativeGearExtremelyBasic
       prototypes: [SyndicateOperativeGearExtremelyBasic]
     - type: RandomMetadata
       nameSegments: [corvax_names_death_commando] # Corvax-Localization
@@ -54,6 +27,37 @@
   suffix: NukeOps
   components:
     - type: NukeOperative
+
+#Flesh Cultist
+- type: entity
+  parent: MobHuman
+  id: MobHumanFleshCultist
+  name: Flesh Cultist
+  components:
+    - type: FleshCultist
+      startingEvolutionPoint: 300
+    - type: NpcFactionMember
+      factions:
+        - Flesh
+    - type: UserInterface
+      interfaces:
+        - key: enum.StoreUiKey.Key
+          type: StoreBoundUserInterface
+    - type: Store
+      categories:
+        - FleshCultistAbilities
+      currencyWhitelist:
+        - StolenMutationPoint
+    - type: IntrinsicRadioReceiver
+    - type: IntrinsicRadioTransmitter
+      channels:
+        - Flesh
+    - type: ActiveRadio
+      channels:
+        - Flesh
+    - type: Psionic
+      channel: Flesh
+      channelColor: "#cf1b48"
 
 # Nuclear Operative
 - type: entity
@@ -75,7 +79,6 @@
       randomizeName: false
     - type: NukeOperative
     - type: Loadout
-      prototype: SyndicateOperativeGearFull
       prototypes: [SyndicateOperativeGearFull]
     - type: RandomMetadata
       nameSegments:
@@ -85,10 +88,27 @@
       factions:
       - Syndicate
 
-# DNA Scrambler
+# Space Ninja
 - type: entity
+  noSpawn: true
+  name: Space Ninja
   parent: MobHuman
-  id: MobHumanScrambled
-  name: Scrambled Human
+  id: MobHumanSpaceNinja
   components:
-    - type: RandomHumanoidAppearance
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: Loadout
+    prototypes: [SpaceNinjaGear]
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: SpaceNinja
+  - type: GenericAntag
+    rule: Ninja
+  - type: AutoImplant
+    implants:
+    - DeathAcidifierImplant
+  - type: RandomMetadata
+    nameSegments:
+    - names_ninja_title
+    - names_ninja

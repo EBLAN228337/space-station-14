@@ -35,11 +35,10 @@
         layer:
         - MachineLayer
   - type: EntityStorage
-    capacity: 500
   - type: PlaceableSurface
     isPlaceable: false # defaults to closed.
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
@@ -81,7 +80,7 @@
   - type: ResistLocker
 
 - type: entity
-  parent: CrateGeneric
+  parent: CrateBaseWeldable
   id: CrateBaseSecure
   components:
   - type: Lock
@@ -102,8 +101,8 @@
       map: ["enum.StorageVisualLayers.Lock"]
       shader: unshaded
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StrongMetallic
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -117,3 +116,8 @@
     node: cratesecure
     containers:
     - entity_storage
+  - type: Reflect
+    reflects:
+    - Energy
+    reflectProb: 0.2
+    spread: 90

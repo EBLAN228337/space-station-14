@@ -306,7 +306,7 @@ public sealed partial class StationJobsSystem
                     continue;
 
                 // If the overflow exists, put them in as it.
-                assignedJobs.Add(player, (overflows[0], givenStations[0]));
+                assignedJobs.Add(player, (overflows[0], station));
                 break;
             }
         }
@@ -363,6 +363,13 @@ public sealed partial class StationJobsSystem
 
                 if (!(roleBans == null || !roleBans.Contains(jobId)))
                     continue;
+
+                // start-backmen: whitelist
+                if (job.WhitelistRequired && !EntityManager.System<Backmen.RoleWhitelist.WhitelistSystem>().IsInWhitelist(player))
+                {
+                    continue;
+                }
+                // end-backmen: whitelist
 
                 availableJobs ??= new List<string>(profile.JobPriorities.Count);
                 availableJobs.Add(jobId);

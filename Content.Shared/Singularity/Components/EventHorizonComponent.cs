@@ -1,5 +1,6 @@
 using Robust.Shared.GameStates;
 using Content.Shared.Singularity.EntitySystems;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Singularity.Components;
 
@@ -10,7 +11,7 @@ namespace Content.Shared.Singularity.Components;
 /// </summary>
 [Access(friends: typeof(SharedEventHorizonSystem))]
 [RegisterComponent, NetworkedComponent]
-public sealed class EventHorizonComponent : Component
+public sealed partial class EventHorizonComponent : Component
 {
     /// <summary>
     /// The radius of the event horizon within which it will destroy all entities and tiles.
@@ -19,6 +20,18 @@ public sealed class EventHorizonComponent : Component
     /// </summary>
     [DataField("radius")]
     public float Radius;
+
+    /// <summary>
+    /// involves periodically destroying tiles within a specified radius
+    /// </summary>
+    [DataField]
+    public bool ConsumeTiles = true;
+
+    /// <summary>
+    /// involves periodically destroying entities within a specified radius. Does not affect collide destruction of entities.
+    /// </summary>
+    [DataField]
+    public bool ConsumeEntities = true;
 
     /// <summary>
     /// Whether the event horizon can consume/destroy the devices built to contain it.
@@ -59,19 +72,13 @@ public sealed class EventHorizonComponent : Component
     /// </summary>
     [DataField("consumePeriod")]
     [ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan TargetConsumePeriod { get; set; } = TimeSpan.FromSeconds(0.5);
-
-    /// <summary>
-    /// The last time at which this consumed everything it overlapped with.
-    /// </summary>
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan LastConsumeWaveTime { get; set; } = default!;
+    public TimeSpan TargetConsumePeriod = TimeSpan.FromSeconds(0.5);
 
     /// <summary>
     /// The next time at which this consumed everything it overlapped with.
     /// </summary>
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan NextConsumeWaveTime { get; set; } = default!;
+    [ViewVariables(VVAccess.ReadOnly), DataField("nextConsumeWaveTime", customTypeSerializer:typeof(TimeOffsetSerializer))]
+    public TimeSpan NextConsumeWaveTime;
 
     #endregion Update Timing
 }

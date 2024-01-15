@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
@@ -10,7 +11,6 @@ using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
-using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Body.Systems
@@ -27,6 +27,7 @@ namespace Content.Server.Body.Systems
         [Dependency] private readonly LungSystem _lungSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly MobStateSystem _mobState = default!;
+        [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
 
         public override void Initialize()
         {
@@ -35,16 +36,34 @@ namespace Content.Server.Body.Systems
             // We want to process lung reagents before we inhale new reagents.
             UpdatesAfter.Add(typeof(MetabolizerSystem));
             SubscribeLocalEvent<RespiratorComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
+
+            SubscribeLocalEvent<RespiratorImmunityComponent, ComponentInit>(OnPressureImmuneInit);
+            SubscribeLocalEvent<RespiratorImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
+        }
+
+        private void OnPressureImmuneInit(EntityUid uid, RespiratorImmunityComponent pressureImmunity, ComponentInit args)
+        {
+            if (TryComp<RespiratorComponent>(uid, out var respirator))
+            {
+                respirator.HasImmunity = true;
+            }
+        }
+
+        private void OnPressureImmuneRemove(EntityUid uid, RespiratorImmunityComponent pressureImmunity, ComponentRemove args)
+        {
+            if (TryComp<RespiratorComponent>(uid, out var respirator))
+            {
+                respirator.HasImmunity = false;
+            }
         }
 
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
 
-            foreach (var (respirator, body) in EntityManager.EntityQuery<RespiratorComponent, BodyComponent>())
+            var query = EntityQueryEnumerator<RespiratorComponent, BodyComponent>();
+            while (query.MoveNext(out var uid, out var respirator, out var body))
             {
-                var uid = respirator.Owner;
-
                 if (_mobState.IsDead(uid))
                 {
                     continue;
@@ -55,7 +74,7 @@ namespace Content.Server.Body.Systems
                 if (respirator.AccumulatedFrametime < respirator.CycleDelay)
                     continue;
                 respirator.AccumulatedFrametime -= respirator.CycleDelay;
-                UpdateSaturation(respirator.Owner, -respirator.CycleDelay, respirator);
+                UpdateSaturation(uid, -respirator.CycleDelay, respirator);
 
                 if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
                 {
@@ -99,7 +118,7 @@ namespace Content.Server.Body.Systems
 
             // Inhale gas
             var ev = new InhaleLocationEvent();
-            RaiseLocalEvent(uid, ev, false);
+            RaiseLocalEvent(uid, ev);
 
             ev.Gas ??= _atmosSys.GetContainingMixture(uid, false, true);
 
@@ -146,7 +165,9 @@ namespace Content.Server.Body.Systems
             {
                 _atmosSys.Merge(outGas, lung.Air);
                 lung.Air.Clear();
-                lung.LungSolution.RemoveAllSolution();
+
+                if (_solutionContainerSystem.ResolveSolution(lung.Owner, lung.SolutionName, ref lung.Solution))
+                    _solutionContainerSystem.RemoveAllSolution(lung.Solution.Value);
             }
 
             _atmosSys.Merge(ev.Gas, outGas);
@@ -154,6 +175,9 @@ namespace Content.Server.Body.Systems
 
         private void TakeSuffocationDamage(EntityUid uid, RespiratorComponent respirator)
         {
+            if (respirator.HasImmunity)
+                return;
+
             if (respirator.SuffocationCycles == 2)
                 _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(uid):entity} started suffocating");
 
@@ -162,7 +186,7 @@ namespace Content.Server.Body.Systems
                 _alertsSystem.ShowAlert(uid, AlertType.LowOxygen);
             }
 
-            _damageableSys.TryChangeDamage(uid, respirator.Damage, true, false);
+            _damageableSys.TryChangeDamage(uid, respirator.Damage, false, false);
         }
 
         private void StopSuffocation(EntityUid uid, RespiratorComponent respirator)
@@ -172,7 +196,7 @@ namespace Content.Server.Body.Systems
 
             _alertsSystem.ClearAlert(uid, AlertType.LowOxygen);
 
-            _damageableSys.TryChangeDamage(uid, respirator.DamageRecovery, true);
+            _damageableSys.TryChangeDamage(uid, respirator.DamageRecovery);
         }
 
         public void UpdateSaturation(EntityUid uid, float amount,

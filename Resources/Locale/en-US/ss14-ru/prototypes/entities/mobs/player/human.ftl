@@ -1,6 +1,7 @@
 ent-MobHuman = Urist McHands
     .desc = { ent-BaseMobHuman.desc }
 ent-MobHumanSyndicateAgent = Syndicate Agent
+    .suffix = Human
     .desc = { ent-MobHuman.desc }
 ent-MobHumanSyndicateAgentNukeops = { ent-MobHumanSyndicateAgent }
     .suffix = NukeOps
@@ -9,5 +10,5 @@ ent-MobHumanNukeOp = Nuclear Operative
     .desc = { ent-MobHuman.desc }
 ent-MobHumanLoneNuclearOperative = Lone Operative
     .desc = { ent-MobHuman.desc }
-ent-MobHumanScrambled = Scrambled Human
+ent-MobHumanSpaceNinja = Space Ninja
     .desc = { ent-MobHuman.desc }

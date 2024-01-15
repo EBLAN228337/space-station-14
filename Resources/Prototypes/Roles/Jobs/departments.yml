@@ -14,6 +14,7 @@
   color: "#9FED58"
   roles:
   - Bartender
+  - Borg
   - Botanist
   - Boxer
   - Chaplain
@@ -23,13 +24,11 @@
   - Janitor
   - Lawyer
   - Librarian
-  - MedicalIntern
   - Mime
   - Musician
   - Passenger
   - Reporter
   - Zookeeper
-  - SecurityCadet
   - ServiceWorker
   - TechnicalAssistant
   - ResearchAssistant
@@ -48,6 +47,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - SAI
   accountNumber: 1317 #backmen: currency
 
 - type: department
@@ -85,6 +85,7 @@
   - Detective
   - Warden
   - Brigmedic #backmen
+  - Prisoner #backmen
   accountNumber: 1320  #backmen: currency
 
 - type: department
@@ -93,6 +94,7 @@
   color: "#D381C9"
   roles:
   - ResearchDirector
+  - Roboticist         #backmen: currency
   - Scientist
   - ResearchAssistant
   accountNumber: 1321  #backmen: currency

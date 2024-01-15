@@ -26,3 +26,73 @@
   - !type:BuyerJobCondition
     whitelist:
     - Clown
+
+- type: listing
+  id: UplinkBibleMystagogue
+  name: uplink-biblemystagogue-name
+  description: uplink-biblemystagogue-desc
+  productEntity: BibleMystagogue
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkJob
+  conditions:
+    - !type:BuyerJobCondition
+      whitelist:
+        - Chaplain
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
+- type: listing
+  id: UplinkChainsword
+  name: uplink-chainsword-name
+  description: uplink-chainsword-desc
+  productEntity: Chainsword
+  cost:
+    Telecrystal: 8
+  categories:
+    - UplinkJob
+  conditions:
+    - !type:BuyerJobCondition
+      whitelist:
+        - Chaplain
+
+- type: listing
+  id: InjectorBloodsuckerNocturine
+  name: uplink-nocturine-gland-injector-name
+  description: uplink-nocturine-gland-injector-desc
+  productEntity: InjectorBloodsuckerNocturine
+  cost:
+    Telecrystal: 8
+  categories:
+    - UplinkMisc
+  conditions:
+    - !type:BuyerSpeciesCondition
+      whitelist:
+        - ArachneClassic
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
+- type: listing
+  id: UplinkCostumeMime
+  name: uplink-costume-mime-name
+  description: uplink-costume-mime-desc
+  productEntity: ClothingBackpackDuffelSyndicateCostumeMime
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkBeltDemoman
+  name: uplink-belt-demoman-name
+  description: uplink-belt-demoman-desc
+  productEntity: ClothingBeltDemomanFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkExplosives

@@ -5,9 +5,9 @@
   playTimeTracker: JobMime
   requirements:
   - !type:OverallPlaytimeRequirement
-      time: 90000 # Corvax-RoleTime
+      time: 90000 #25 hrs # Corvax-RoleTime
   startingGear: MimeGear
-  icon: "Mime"
+  icon: "JobIconMime"
   supervisors: job-supervisors-hop
   access:
   - Theatre
@@ -17,10 +17,10 @@
     components:
     - type: MimePowers
   #start-backmen: currency
-  minBankBalance: 300
-  maxBankBalance: 500
+  minBankBalance: 150
+  maxBankBalance: 250
   wageDepartment: Civilian
-  wage: 100
+  wage: 50
   #end-backmen: currency
 
 - type: startingGear
@@ -37,6 +37,18 @@
     mask: ClothingMaskMime
     id: MimePDA
     ears: ClothingHeadsetService
-  innerclothingskirt: ClothingUniformJumpskirtMime
+  innerClothingSkirt: ClothingUniformJumpskirtMime
   satchel: ClothingBackpackSatchelMimeFilled
   duffelbag: ClothingBackpackDuffelMimeFilled
+
+- type: entity
+  id: ActionMimeInvisibleWall
+  name: Create Invisible Wall
+  description: Create an invisible wall in front of you, if placeable there.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    priority: -1
+    useDelay: 30
+    icon: Structures/Walls/solid.rsi/full.png
+    event: !type:InvisibleWallActionEvent

@@ -45,6 +45,12 @@ alerts-dead-desc = You're dead, note that you can still be revived!
 alerts-health-name = Health
 alerts-health-desc = [color=green]Green[/color] good. [color=red]Red[/color] bad.
 
+alerts-battery-name = Battery
+alerts-battery-desc = If your battery depletes, you will be unable to use your abilities.
+
+alerts-no-battery-name = No Battery
+alerts-no-battery-desc = You don't have a battery, rendering you unable to charge or use your abilities.
+
 alerts-internals-name = Toggle internals
 alerts-internals-desc = Toggles your gas tank internals on or off.
 
@@ -83,3 +89,21 @@ alerts-pulled-desc = You're being pulled. Move to break free.
 
 alerts-pulling-name = Pulling
 alerts-pulling-desc = You're pulling something. Click the alert to stop.
+
+alerts-bleed-name = [color=red]Bleed[/color]
+alerts-bleed-desc = You're [color=red]bleeding[/color].
+
+alerts-pacified-name = [color=green]Pacified[/color]
+alerts-pacified-desc = You're pacified; you won't be able to harm living creatures.
+
+alerts-suit-power-name = Suit Power
+alerts-suit-power-desc = How much power your space ninja suit has.
+
+alerts-magboots-name = Magboots
+alerts-magboots-desc = You are immune to airflow, but slightly slower.
+
+alerts-revenant-essence-name = Essence
+alerts-revenant-essence-desc = The power of souls. It sustains you and is used for abilities. It regenerates slowly over time.
+
+alerts-revenant-corporeal-name = Corporeal
+alerts-revenant-corporeal-desc = You have manifested physically. People around you can see and hurt you.

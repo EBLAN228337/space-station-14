@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, MobCombat ]
   id: MrChips
   name: mr chips
   suffix: Dummy
@@ -12,20 +12,19 @@
   - type: Input
     context: "human"
   - type: DoAfter
-  - type: PuppetDummy
+  - type: VentriloquistPuppet
   - type: Item
-    size: 30
+    size: Normal
   - type: Muted
   - type: TypingIndicator
     proto: robot
-  - type: TTS
+  - type: TTS # Corvax-TTS
     voice: Npc2
   - type: Actions
   - type: MobState
     allowedStates:
       - Alive
   - type: MeleeWeapon
-    hidden: true
     soundHit:
       path: /Audio/Weapons/boxingpunch1.ogg
     angle: 30
@@ -43,5 +42,5 @@
     sprite: Objects/Fun/mrdips.rsi
     layers:
     - state: icon
-  - type: TTS
+  - type: TTS # Corvax-TTS
     voice: Npc1

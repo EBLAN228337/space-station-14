@@ -11,7 +11,7 @@
       department: Security
       time: 7200
   startingGear: BrigmedicGear
-  icon: "Brigmedic"
+  icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
   canBeAntag: false
   access:
@@ -21,26 +21,33 @@
     - Maintenance
     - External
   #start-backmen: currency
-  minBankBalance: 300
-  maxBankBalance: 500
+  minBankBalance: 150
+  maxBankBalance: 250
   wageDepartment: Security
-  wage: 100
+  wage: 50
   #end-backmen: currency
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: PsionicBonusChance
+          flatBonus: 0.025
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: BrigmedicGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitBrigmedic
-    back: ClothingBackpackSecurityFilled
+    back: ClothingBackpackBrigmedicFilled # Backmen
     shoes: ClothingShoesBootsJackSec # Corvax-Resprite
     gloves: ClothingHandsGlovesNitrile
-    eyes: ClothingEyesHudMedical
+    eyes: ClothingEyesHudMedSec
     head: ClothingHeadHatBeretSecurityMedic # Corvax-Resprite
     outerClothing: ClothingOuterVestArmorMedSec # Corvax-Resprite
     id: BrigmedicPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetBrigmedic # Backmen
     mask: ClothingMaskSterile
     belt: ClothingBeltMedicalFilled
-  innerclothingskirt: ClothingUniformJumpskirtBrigmedic
-  satchel: ClothingBackpackSatchelSecurityFilled
-  duffelbag: ClothingBackpackDuffelSecurityFilled
+  innerClothingSkirt: ClothingUniformJumpskirtBrigmedic
+  satchel: ClothingBackpackSatchelBrigmedicFilled # Backmen
+  duffelbag: ClothingBackpackDuffelBrigmedicFilled # Backmen

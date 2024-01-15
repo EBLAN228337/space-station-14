@@ -4,7 +4,7 @@
   description: job-description-musician
   playTimeTracker: JobMusician
   startingGear: MusicianGear
-  icon: "Musician"
+  icon: "JobIconMusician"
   supervisors: job-supervisors-hop # Corvax-JobSupervisors
   access:
   - Maintenance # TODO Remove maint access for all gimmick jobs once access work is completed
@@ -14,10 +14,10 @@
     holiday: MikuDay
     prototype: BoxPerformer
   #start-backmen: currency
-  minBankBalance: 300
-  maxBankBalance: 500
+  minBankBalance: 150
+  maxBankBalance: 250
   wageDepartment: Civilian
-  wage: 100
+  wage: 50
   #end-backmen: currency
 
 - type: startingGear

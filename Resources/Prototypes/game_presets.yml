@@ -33,12 +33,39 @@
     - Secret
 
 - type: gamePreset
+  id: FleshCult
+  alias:
+    - fleshcult
+    - fs
+  name: flesh-cult-title
+  description: flesh-cult-description
+  showInVote: false
+  rules:
+    - FleshCult
+    - BasicStationEventScheduler
+    - WageScheduler #backmen: currency
+
+- type: gamePreset
+  id: FleshCultAndTraitor
+  alias:
+    - madness
+    - fleshcultandtraitor
+  name: flesh-cult-and-traitor-title
+  showInVote: false
+  description: flesh-cult-and-traitor-description
+  rules:
+    - FleshCult
+    - Traitor
+    - BasicStationEventScheduler
+    - WageScheduler #backmen: currency
+
+- type: gamePreset
   id: Sandbox
   alias:
     - sandbox
   name: sandbox-title
   description: sandbox-description
-  showInVote: true
+  showInVote: false
   maxPlayers: 5
   rules:
     - Sandbox
@@ -62,8 +89,12 @@
     - dm
   name: death-match-title
   description: death-match-description
+  maxPlayers: 15
+  showInVote: true
+  isMiniGame: true
+  supportedMaps: DeathMatchMapPool
   rules:
-    - DeathMatch
+    - DeathMatch31
 
 - type: gamePreset
   id: Nukeops
@@ -76,6 +107,32 @@
     - Nukeops
     - BasicStationEventScheduler
     - WageScheduler #backmen: currency
+
+- type: gamePreset
+  id: NukeopsTraitor
+  alias:
+    - nukeopstraitor
+    - syndinukies
+  name: nukeops-traitor-title
+  description: nukeops-traitor-description
+  showInVote: false
+  rules:
+    - Nukeops
+    - Traitor
+    - BasicStationEventScheduler
+
+- type: gamePreset
+  id: Revolutionary
+  alias:
+    - rev
+    - revs
+    - revolutionaries
+  name: rev-title
+  description: rev-description
+  showInVote: false
+  rules:
+    - Revolutionary
+    - BasicStationEventScheduler
 
 - type: gamePreset
   id: Zombie

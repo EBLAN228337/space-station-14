@@ -15,6 +15,8 @@ namespace Content.Client.Chat.Managers
 
         private ISawmill _sawmill = default!;
 
+        public event Action? PermissionsUpdated;
+
         public void Initialize()
         {
             _sawmill = Logger.GetSawmill("chat");
@@ -67,9 +69,23 @@ namespace Content.Client.Chat.Managers
                     _consoleHost.ExecuteCommand($"whisper \"{CommandParsing.Escape(str)}\"");
                     break;
 
+                case ChatSelectChannel.Telepathic:
+                    _consoleHost.ExecuteCommand($"tsay \"{CommandParsing.Escape(str)}\"");
+                    break;
+
+                // Parkstation-Shadowkin chat start
+                case ChatSelectChannel.Empathy:
+                    _consoleHost.ExecuteCommand($"esay \"{CommandParsing.Escape(str)}\"");
+                    break;
+                // Parkstation-Shadowkin chat end
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(channel), channel, null);
             }
+        }
+        public void UpdatePermissions()
+        {
+            PermissionsUpdated?.Invoke();
         }
     }
 }

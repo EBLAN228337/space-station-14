@@ -2,9 +2,11 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Humanoid;
 using Content.Client.Info;
+using Content.Client.Info.PlaytimeStats;
 using Content.Client.Lobby.UI;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
+using Content.Corvax.Interfaces.Client;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -25,6 +27,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Direction = Robust.Shared.Maths.Direction;
 
 namespace Content.Client.Preferences.UI
 {
@@ -79,7 +82,16 @@ namespace Content.Client.Preferences.UI
             UpdateUI();
 
             RulesButton.OnPressed += _ => new RulesAndInfoWindow().Open();
+
+            StatsButton.OnPressed += _ => new PlaytimeStatsWindow().OpenCentered();
             preferencesManager.OnServerDataLoaded += UpdateUI;
+            // Corvax-Sponsors-Start
+            if (IoCManager.Instance!.TryResolveType<ISponsorWindowCreator>(out var creator))
+            {
+                SponsorButton.Visible = true;
+                SponsorButton.OnPressed += _ => creator.OpenWindow();
+            }
+            // Corvax-Sponsors-End
         }
 
         protected override void Dispose(bool disposing)
@@ -190,10 +202,10 @@ namespace Content.Client.Preferences.UI
 
                 var view = new SpriteView
                 {
-                    Sprite = entityManager.GetComponent<SpriteComponent>(_previewDummy),
                     Scale = new Vector2(2, 2),
                     OverrideDirection = Direction.South
                 };
+                view.SetEntity(_previewDummy);
 
                 var description = profile.Name;
 

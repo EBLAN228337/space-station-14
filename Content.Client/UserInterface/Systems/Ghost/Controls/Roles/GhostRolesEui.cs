@@ -1,8 +1,11 @@
 using System.Linq;
 using Content.Client.Eui;
+using Content.Client.Players.PlayTimeTracking;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
 using JetBrains.Annotations;
+using Robust.Client.GameObjects;
+using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
@@ -64,14 +67,42 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             if (state is not GhostRolesEuiState ghostState) return;
             _window.ClearEntries();
 
+            var entityManager = IoCManager.Resolve<IEntityManager>();
+            var sysManager = entityManager.EntitySysManager;
+            var spriteSystem = sysManager.GetEntitySystem<SpriteSystem>();
+            var requirementsManager = IoCManager.Resolve<JobRequirementsManager>();
+
             var groupedRoles = ghostState.GhostRoles.GroupBy(
-                role => (role.Name, role.Description));
+                role => (role.Name, role.Description, role.Requirements, role.WhitelistRequired)); //backmen: whitelist
+
+            //start-backmen: whitelist
+            var cfg = IoCManager.Resolve<Robust.Shared.Configuration.IConfigurationManager>();
+            //end-backmen: whitelist
+
             foreach (var group in groupedRoles)
             {
                 var name = group.Key.Name;
                 var description = group.Key.Description;
+                bool hasAccess = true;
+                FormattedMessage? reason;
 
-                _window.AddEntry(name, description, group);
+                //start-backmen: whitelist
+                if (
+                    group.Key.WhitelistRequired &&
+                    cfg.GetCVar(Shared.Backmen.CCVar.CCVars.WhitelistRolesEnabled) &&
+                    !requirementsManager.IsWhitelisted()
+                    )
+                {
+                    hasAccess = false;
+                    reason = FormattedMessage.FromMarkup(Loc.GetString("playtime-deny-reason-not-whitelisted"));
+                } else
+                //end-backmen: whitelist
+                if (!requirementsManager.CheckRoleTime(group.Key.Requirements, out reason))
+                {
+                    hasAccess = false;
+                }
+
+                _window.AddEntry(name, description, hasAccess, reason, group, spriteSystem);
             }
 
             var closeRulesWindow = ghostState.GhostRoles.All(role => role.Identifier != _windowRulesId);

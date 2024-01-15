@@ -4,6 +4,8 @@
   id: MobBatRemilia
   description: The chaplain's familiar. Likes fruit.
   components:
+  - type: BloodSucker
+    unitsToSucc: 5
   - type: GhostRole
     makeSentient: true
     allowMovement: true
@@ -12,13 +14,19 @@
     description: ghost-role-information-remilia-description
     rules: ghost-role-information-remilia-rules
   - type: GhostTakeoverAvailable
+  - type: Body
+    prototype: VampiricAnimal
+  - type: Dispellable
+  - type: Psionic
+    removable: false
   - type: Grammar
     attributes:
       gender: female
       proper: true
   - type: Tag
     tags:
-      - DoorBumpOpener
+    - DoorBumpOpener
+    - VimPilot
   - type: Access
     tags:
     - Chapel
@@ -45,7 +53,6 @@
     rules: ghost-role-information-cerberus-rules
   - type: GhostTakeoverAvailable
   - type: MeleeWeapon
-    hidden: true
     angle: 0
     animation: WeaponArcBite
     damage:
@@ -65,20 +72,24 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      160: Dead
+      120: Dead
   - type: Grammar
     attributes:
       gender: male
       proper: true
   - type: Tag
     tags:
-      - DoorBumpOpener
+    - DoorBumpOpener
+    - VimPilot
   - type: Access
     tags:
     - Chapel
   - type: MindContainer
     showExamineInfo: true
   - type: Familiar
+  - type: Dispellable
+  - type: Psionic
+    removable: false
   - type: Vocal
     sounds:
       Male: Cerberus

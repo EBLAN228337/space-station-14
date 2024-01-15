@@ -6,9 +6,9 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 3600 # Corvax-RoleTime
+      time: 3600 #1 hrs # Corvax-RoleTime
   startingGear: ChefGear
-  icon: "Chef"
+  icon: "JobIconChef"
   supervisors: job-supervisors-hop
   access:
   - Service
@@ -18,10 +18,10 @@
   - Hydroponics
   - Bar
   #start-backmen: currency
-  minBankBalance: 300
-  maxBankBalance: 500
+  minBankBalance: 150
+  maxBankBalance: 250
   wageDepartment: Civilian
-  wage: 100
+  wage: 50
   #end-backmen: currency
 
 - type: startingGear
@@ -35,6 +35,7 @@
     id: ChefPDA
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterApronChef
-  innerclothingskirt: ClothingUniformJumpskirtChef
+    belt: ClothingBeltChefFilled
+  innerClothingSkirt: ClothingUniformJumpskirtChef
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled

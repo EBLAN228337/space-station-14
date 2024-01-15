@@ -2,9 +2,37 @@
   id: BriefcaseBrownFilled
   name: brown briefcase
   parent: BriefcaseBrown
-  suffix: Filled
+  suffix: Filled, Paper
   components:
   - type: StorageFill
     contents:
       - id: Paper
         amount: 3
+
+- type: entity
+  id: BriefcaseSyndieSniperBundleFilled
+  name: brown briefcase
+  parent: BriefcaseSyndie
+  suffix: SniperBundle
+  components:
+  - type: Item
+    size: Ginormous
+  - type: StorageFill
+    contents: # backmen
+      - id: WeaponRifleSR127
+      - id: MagazineAntiMaterielRifleSR
+      - id: ClothingEyesGlassesMercenary
+      - id: KukriKnife
+      - id: ClothingHeadHatStetson
+
+- type: entity
+  id: BriefcaseSyndieLobbyingBundleFilled
+  name: brown briefcase
+  parent: BriefcaseSyndie
+  suffix: Syndicate, Spesos
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingEyesGlassesSunglasses
+      - id: SpaceCash1000
+        amount: 5

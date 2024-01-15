@@ -6,20 +6,20 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 36000 # Corvax-RoleTime
+      time: 36000 #10 hrs # Corvax-RoleTime
       inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
-  icon: "ResearchAssistant"
-  supervisors: job-supervisors-rd
+  icon: "JobIconResearchAssistant"
+  supervisors: job-supervisors-science
   canBeAntag: false
   access:
   - Research
   - Maintenance
   #start-backmen: currency
-  minBankBalance: 300
-  maxBankBalance: 500
+  minBankBalance: 150
+  maxBankBalance: 250
   wageDepartment: Science
-  wage: 50
+  wage: 25
   #end-backmen: currency
 
 - type: startingGear
@@ -30,6 +30,6 @@
     shoes: ClothingShoesColorWhite
     id: ResearchAssistantPDA
     ears: ClothingHeadsetScience
-  innerclothingskirt: ClothingUniformJumpskirtColorWhite
+  innerClothingSkirt: ClothingUniformJumpskirtColorWhite
   satchel: ClothingBackpackSatchelScienceFilled
   duffelbag: ClothingBackpackDuffelScienceFilled

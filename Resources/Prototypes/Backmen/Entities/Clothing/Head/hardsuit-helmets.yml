@@ -66,3 +66,90 @@
         Radiation: 0.5
   - type: TemperatureProtection
     coefficient: 0.005
+
+# carporate hardsuit
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitCentcomCarporate
+  noSpawn: true
+  name: Шлем скафандра ЦК (Корпорат)
+  description: Специальный космический шлем Корпорат сделаный для различных ситуация с хорошим фанариком лоялиста НаноТрайзен.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Hardsuits/centcom_corparat.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Hardsuits/centcom_corparat.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    color: blue
+    radius: 7
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitRd
+  id: ClothingHeadHelmetHardsuitMystagogue
+  noSpawn: true
+  name: шлем защитного костюма мистагогов
+  description: Легкий шлем скафандра, оснащенный первой в галактике системой псионического прохождения.
+  components:
+    - type: Psionic
+    - type: TinfoilHat
+      passthrough: true
+      destroyOnFry: false
+    - type: ClothingGrantPsionicPower
+      power: MetapsionicPower
+    - type: GuideHelp
+      guides:
+        - Psionics
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitUEG
+  noSpawn: true
+  name: Шлем скафандра охраны ОПЗ
+  description: Этот шлем был нагло скопирован с шлема лидера ОБР NanoTrasen
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    color: green
+    radius: 5
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        
+#Mime Hardsuit
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSecurity
+  id: ClothingHeadHelmetHardsuitMime
+  noSpawn: true
+  name: mime hardsuit helmet
+  description: A mime hardsuit helmet.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Hardsuits/mime.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Hardsuits/mime.rsi
+    equipSound: /Audio/Backmen/Misc/none.ogg
+    unequipSound: /Audio/Backmen/Misc/none.ogg

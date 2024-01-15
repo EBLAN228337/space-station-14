@@ -6,7 +6,16 @@
   suffix: CentCom, Locked
   components:
     - type: AccessReader
-      access: [["CCGeneral"]]
+      access: [["CentralCommand"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
 
 - type: entity
   parent: HighSecDoor
@@ -16,6 +25,15 @@
   components:
     - type: AccessReader
       access: [["CCSecurity"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
 
 - type: entity
   parent: HighSecDoor
@@ -25,6 +43,33 @@
   components:
     - type: AccessReader
       access: [["CCOfficer"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCCAdmiralLocked
+  name: Бронированная дверь каюты Адмирала ЦК
+  suffix: CentCom, Admiral, Locked
+  components:
+    - type: AccessReader
+      access: [["CCAdmiral"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
 
 #Airlocks CC
 - type: entity
@@ -54,7 +99,7 @@
   suffix: CentCom, Engineering, Locked
   components:
     - type: AccessReader
-      access: [["CCGeneral"]]
+      access: [["CentralCommand"]]
 
 - type: entity
   parent: AirlockMedical
@@ -63,4 +108,52 @@
   suffix: CentCom, Medical, Locked
   components:
     - type: AccessReader
-      access: [["CCGeneral"]]
+      access: [["CentralCommand"]]
+
+#Hatches
+- type: entity
+  parent: AirlockHatchCentcomm
+  id: AirlockHatchCentcommLocked
+  name: CentCom Hatch
+  suffix: CentCom, Locked
+  components:
+    - type: AccessReader
+      access: [["CentralCommand"]]
+      
+- type: entity
+  parent: AirlockHatchMaint
+  id: AirlockHatchMaintLocked
+  name: Maintenance Hatch
+  suffix: Maint, Locked
+  components:
+    - type: AccessReader
+      access: [["Maintenance"]]
+      
+- type: entity
+  parent: AirlockHatchCentcomm
+  id: AirlockHatchSyndicateLocked
+  name: Syndicate Hatch
+  suffix: Syndicate, Locked
+  components:
+    - type: AccessReader
+      access: [["SyndicateAgent"]]
+    
+#DoubleAirlocks
+
+- type: entity
+  parent: DoubleGlassAirlock
+  id: DoubleGlassAirlockCentcomLocked
+  name: Double Glass Airlock
+  suffix: CentCom, Locked
+  components:
+    - type: AccessReader
+      access: [["CentralCommand"]]
+     
+- type: entity
+  parent: DoubleGlassAirlock
+  id: DoubleGlassAirlockSyndicateLocked
+  name: Double Glass Airlock
+  suffix: Syndicate, Locked
+  components:
+    - type: AccessReader
+      access: [["SyndicateAgent"]]

@@ -7,11 +7,11 @@
   components:
   - type: Sprite
     sprite: Backmen/Objects/Consumable/Food/Tins/c-soupcan.rsi
-    state: classic
+    state: icon
   - type: Item
     sprite: Backmen/Objects/Consumable/Food/Tins/c-soupcan.rsi
     heldPrefix: packet
-    size: 3
+    size: Small
   - type: Destructible
     thresholds:
     - trigger:
@@ -30,7 +30,7 @@
         acts: [ "Destruction" ]
   - type: StaticPrice
     price: 250
-    
+
 - type: entity
   id: CannedClownSoupcanOpen
   name: Fun-Clo
@@ -40,11 +40,11 @@
   components:
   - type: Sprite
     sprite: Backmen/Objects/Consumable/Food/Tins/c-soupcan.rsi
-    state: classic-clown
+    state: clown
   - type: Item
     sprite: Backmen/Objects/Consumable/Food/Tins/c-soupcan.rsi
     heldPrefix: packet
-    size: 3
+    size: Small
   - type: GhostRole
     name: ghost-role-information-canned-clown-name
     description: ghost-role-information-canned-clown-description

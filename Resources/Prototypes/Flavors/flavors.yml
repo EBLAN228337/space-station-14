@@ -170,6 +170,11 @@
   description: flavor-base-syrupy
 
 - type: flavor
+  id: clean
+  flavorType: Base
+  description: flavor-base-clean
+
+- type: flavor
   id: nothing
   flavorType: Complex
   description: flavor-complex-nothing
@@ -223,6 +228,11 @@
   id: egg
   flavorType: Complex
   description: flavor-complex-egg
+
+- type: flavor
+  id: raw-egg
+  flavorType: Complex
+  description: flavor-complex-raw-egg
 
 - type: flavor
   id: bacon
@@ -298,6 +308,11 @@
   id: peas
   flavorType: Complex
   description: flavor-complex-peas
+
+- type: flavor
+  id: lemoon
+  flavorType: Complex
+  description: flavor-complex-lemoon
 
 - type: flavor
   id: pineapple
@@ -520,6 +535,11 @@
   description: flavor-complex-water
 
 - type: flavor
+  id: mopwata
+  flavorType: Complex
+  description: flavor-complex-mopwata
+
+- type: flavor
   id: beer
   flavorType: Complex
   description: flavor-complex-beer
@@ -573,6 +593,11 @@
   id: shittywine
   flavorType: Complex
   description: flavor-complex-shitty-wine
+
+- type: flavor
+  id: champagne
+  flavorType: Complex
+  description: flavor-complex-champagne
 
 - type: flavor
   id: icedtea
@@ -725,6 +750,11 @@
   description: flavor-complex-grape
 
 - type: flavor
+  id: berry
+  flavorType: Complex
+  description: flavor-complex-berry
+
+- type: flavor
   id: garlic
   flavorType: Complex
   description: flavor-complex-garlic
@@ -818,3 +848,38 @@
   id: rocksandstones
   flavorType: Complex
   description: flavor-complex-rocksandstones
+
+- type: flavor
+  id: spaceshroom
+  flavorType: Base
+  description: flavor-base-spaceshroom
+
+- type: flavor
+  id: spaceshroomcooked
+  flavorType: Complex
+  description: flavor-complex-spaceshroom-cooked
+  
+- type: flavor
+  id: lostfriendship
+  flavorType: Complex
+  description: flavor-complex-lost-friendship
+
+- type: flavor
+  id: pumpkin
+  flavorType: Complex
+  description: flavor-complex-pumpkin
+
+- type: flavor
+  id: punishment
+  flavorType: Complex
+  description: flavor-complex-punishment
+
+- type: flavor
+  id: holy
+  flavorType: Base
+  description: flavor-base-holy
+
+- type: flavor
+  id: horrible
+  flavorType: Base
+  description: flavor-base-horrible

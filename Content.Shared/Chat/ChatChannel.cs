@@ -79,10 +79,21 @@ namespace Content.Shared.Chat
         /// </summary>
         Unspecified = 1 << 13,
 
+
+        /// <summary>
+        ///     Telepathic.
+        /// </summary>
+        Telepathic = 1 << 14,
+
+        /// <summary>
+        ///     Empathy channel for Shadowkin.
+        /// </summary>
+        Empathy = 1 << 15,
+
         /// <summary>
         ///     Channels considered to be IC.
         /// </summary>
-        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual,
+        IC = Local | Whisper | Radio | Telepathic | Dead | Emotes | Damage | Visual,
 
         AdminRelated = Admin | AdminAlert | AdminChat,
     }

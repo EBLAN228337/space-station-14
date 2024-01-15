@@ -23,7 +23,6 @@
       rules: Помогайте Хонк браткам во исполнении ВЕСЁЛЫХ планов!
     - type: GhostTakeoverAvailable
     - type: Loadout
-      prototype: CannedClownGear
       prototypes: [CannedClownGear]
     - type: RandomMetadata
       nameSegments: [clown_basefun]
@@ -45,4 +44,16 @@
     - type: NpcFactionMember
       factions:
       - NanoTrasen
-      - Clown
+#      - Clown
+
+- type: entity
+  parent: MobHuman
+  id: MobHumanFugitive
+  name: Fugitive
+  noSpawn: true
+  components:
+    - type: Loadout
+      prototypes: [FugitiveStartingGear]
+    - type: Fugitive
+    - type: FugitiveCountdown
+    - type: RandomHumanoidAppearance
